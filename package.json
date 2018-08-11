@@ -1,0 +1,52 @@
+{
+  "name": "vue-webpack-lean-starter",
+  "version": "1.0.0",
+  "description": "Easily add vue to an existing page. It uses the new webpack-serve, instead of webpack-dev-server.",
+  "main": "index.js",
+  "scripts": {
+    "webpack:build": "webpack --mode production",
+    "webpack": "webpack --mode development",
+    "webpack:watch": "webpack --progress --watch --mode development",
+    "webpack:server": "webpack-serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.1.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^1.0.0",
+    "file-loader": "^1.1.11",
+    "gulp": "^4.0.0",
+    "gulp-cached": "^1.1.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-progeny": "^0.4.1",
+    "gulp-sass": "^4.0.1",
+    "node-sass": "^4.9.3",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "vue-loader": "^15.3.0",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "webpack-serve": "^2.0.2"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "es6-promise": "^4.2.4",
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "Firefox ESR",
+    "not ie <= 10",
+    "not ie_mob <= 10",
+    "not bb <= 7"
+  ]
+}

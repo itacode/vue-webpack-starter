@@ -1,0 +1,194 @@
+@charset "UTF-8";
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, "メイリオ", "MS PGothic", "ＭＳ Ｐゴシック", Osaka, arial, helvetica, sans-serif;
+  background-color: #fff;
+}
+
+@media (min-width: 769px), print {
+  body {
+    min-width: 1080px;
+  }
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.font_serif {
+  font-family: "Hiragino Mincho ProN", "ヒラギノ明朝 ProN W3", "ＭＳ Ｐ明朝", "MS PMincho", "Times New Roman", Times, serif, sans-serif;
+}
+
+.pc_br {
+  display: none;
+}
+
+@media (min-width: 769px), print {
+  .sp_br {
+    display: none;
+  }
+  .pc_br {
+    display: inline;
+  }
+}
+
+/* Form controls */
+::-webkit-input-placeholder {
+  color: #6f6f6f;
+}
+
+::-moz-placeholder {
+  color: #6f6f6f;
+}
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #6f6f6f;
+}
+
+::-ms-input-placeholder {
+  /* Edge */
+  color: #6f6f6f;
+}
+
+textarea, [type="text"], [type="email"], [type="tel"], [type="search"], [type="password"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #fff;
+  border: 1px solid #a0a0a0;
+  padding: 0.2em 0.5em;
+  font-size: 16px;
+}
+
+textarea:focus, [type="text"]:focus, [type="email"]:focus, [type="tel"]:focus, [type="search"]:focus, [type="password"]:focus {
+  border-color: #43aeda;
+}
+
+[type="file"] {
+  cursor: pointer;
+}
+
+select {
+  height: 2em;
+  border: 1px solid #a0a0a0;
+  border-radius: 0;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+select:focus {
+  border-color: #43aeda;
+}
+
+/**
+ * Library
+ */
+/* Lightbox */
+.blackbox_wrap {
+  display: none;
+}
+
+.blackbox_layer {
+  opacity: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: -blackberry-touch;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  padding: 20px 10px 10px 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.blackbox_layer:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+
+.blackbox_inner {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  text-align: left;
+  -webkit-overflow-scrolling: touch;
+  -webkit-overflow-scrolling: -blackberry-touch;
+  white-space: normal;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  background-color: #fff;
+  -webkit-transform: scale(0) translate3d(0, -100%, 0);
+          transform: scale(0) translate3d(0, -100%, 0);
+}
+
+.blackbox_inner.js_blackbox_play {
+  -webkit-transform: scale(1) translate3d(0, 0, 0);
+          transform: scale(1) translate3d(0, 0, 0);
+  transition: all 0.4s;
+}
+
+.blackbox_close {
+  position: absolute;
+  right: -10px;
+  top: -20px;
+  width: 34px;
+  height: 34px;
+  background: rgba(0, 0, 0, 0.7) url(../img/blackbox_batsu01.png) no-repeat 50% 50%;
+  background-size: 30px 30px;
+  border-radius: 4px;
+  text-indent: -9999px;
+}
+
+/* Others */
+.pagetop_btn {
+  overflow: hidden;
+  position: fixed;
+  right: 10px;
+  bottom: 110px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.8) url(../img/ico_arrow_up01.png) no-repeat 50% 50%;
+  background-size: 10px auto;
+  visibility: hidden;
+  opacity: 0;
+  text-align: left;
+  text-indent: -999px;
+}
+
+.pagetop_btn.js_pagetop_btn_active {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.4s;
+}
+
+.test {
+  display: flex;
+  border-top: 80px;
+  transition: 2s all;
+  -webkit-transform: translate3d(-100%, 0, 0) scale3d(1, 0, 0);
+          transform: translate3d(-100%, 0, 0) scale3d(1, 0, 0);
+}
