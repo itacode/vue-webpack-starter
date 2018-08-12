@@ -4,7 +4,7 @@ export default {
 
   data() {
     return {
-      fetchedData: this.fetchData()
+      fetchedData: this.fetchData(),
     };
   },
   methods: {
@@ -12,9 +12,9 @@ export default {
       this.$http.get("https://swapi.co/api/people/1/").then(response => {
         this.fetchedData = response.data;
       });
-    }
+    },
   }
-}
+};
 </script>
 
 <template>

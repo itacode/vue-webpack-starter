@@ -1,17 +1,17 @@
 {
   "name": "vue-webpack-lean-starter",
   "version": "1.0.0",
-  "description": "Easily add vue to an existing page. It uses the new webpack-serve, instead of webpack-dev-server.",
+  "description": "Easily add vue to an existing page. It uses the webpack-serve, instead of the older webpack-dev-server.",
   "main": "index.js",
   "scripts": {
-    "webpack:build": "webpack --mode production",
+    "dev": "webpack-serve",
+    "build": "webpack --mode production",
     "webpack": "webpack --mode development",
-    "webpack:watch": "webpack --progress --watch --mode development",
-    "webpack:server": "webpack-serve"
+    "webpack:watch": "webpack --progress --watch --mode development"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^9.1.0",
     "babel-core": "^6.26.3",
