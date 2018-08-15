@@ -1,4 +1,7 @@
-import 'es6-promise/auto';
+// Polyfills
+import 'core-js/es6/promise';
+
+// App
 import Vue from 'vue';
 import app from './components/app.vue';
 import router from './router/';
