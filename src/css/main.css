@@ -15,12 +15,6 @@ body {
   background-color: #fff;
 }
 
-@media (min-width: 769px), print {
-  body {
-    min-width: 1080px;
-  }
-}
-
 a {
   color: inherit;
 }
