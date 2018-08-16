@@ -5,7 +5,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
   entry: {
-    main: './src/app/main.js'
+    main: './src/app/main.js',
   },
   output: {
     filename: '[name].bundle.js',
@@ -14,10 +14,9 @@ module.exports = {
   },
   mode: process.env.WEBPACK_SERVE ? 'development' : 'production',
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.vue$/,
-        use: 'vue-loader'
+        use: 'vue-loader',
       },
       {
         test: /\.js$/,
@@ -25,7 +24,7 @@ module.exports = {
         exclude: file => (
           /node_modules/.test(file) &&
           !/\.vue\.js/.test(file)
-        )
+        ),
       },
       {
         test: /\.css$/,
@@ -33,19 +32,21 @@ module.exports = {
           'vue-style-loader',
           {
             loader: 'css-loader',
-            options: { importLoaders: 1 }
+            options: {
+              importLoaders: 1
+            }
           },
-          'postcss-loader'
-        ]
+          'postcss-loader',
+        ],
       },
       {
         test: /\.scss$/,
         use: [
           'vue-style-loader',
           'css-loader',
+          'postcss-loader',
           'sass-loader',
-          'postcss-loader'
-        ]
+        ],
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
@@ -53,10 +54,10 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: '[name].[ext]',
-          }
-        }
-      }
-    ]
+          },
+        },
+      },
+    ],
   },
   resolve: {
     alias: {
@@ -69,14 +70,16 @@ module.exports = {
     new CopyWebpackPlugin([{
       from: 'src/',
       to: path.resolve(__dirname, 'dist/'),
-      ignore: ['app/**/*']
+      ignore: ['app/**/*'],
     }]),
   ],
   devtool: "source-map", // enum
   serve: {
     open: true,
     content: path.resolve(__dirname, 'src/'),
-    devMiddleware: {publicPath: '/js/'},
-    clipboard: false
+    devMiddleware: {
+      publicPath: '/js/',
+    },
+    clipboard: false,
   },
 };

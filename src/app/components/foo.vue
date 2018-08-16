@@ -13,7 +13,7 @@ export default {
         this.fetchedData = response.data;
       });
     },
-  }
+  },
 };
 </script>
 
