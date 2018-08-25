@@ -70,7 +70,7 @@ module.exports = {
     new CopyWebpackPlugin([{
       from: 'src/',
       to: path.resolve(__dirname, 'dist/'),
-      ignore: ['app/**/*'],
+      ignore: ['app/**/*', 'css/**/*.scss'],
     }]),
   ],
   devtool: "source-map", // enum
