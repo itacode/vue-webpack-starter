@@ -12,8 +12,8 @@ It is a ready to use template, to start developing single page applications with
 - axios
 - webpack 4
 - webpack-dev-server with hot reload
-- babel
+- babel 7
 - autoprefixer
 - scss-loader
 - gulp 4 for compiling scss
-- css original reset, that merges Meyer one reset with normalize.css
+- css original reset, that merges Meyer's reset with normalize.css
