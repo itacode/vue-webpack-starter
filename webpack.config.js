@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
@@ -10,9 +11,8 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist/js'),
-    publicPath: '/js/',
+    publicPath: '/src/js/',
   },
-  mode: process.env.WEBPACK_SERVE ? 'development' : 'production',
   module: {
     rules: [{
         test: /\.vue$/,
@@ -65,6 +65,8 @@ module.exports = {
     },
   },
   plugins: [
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
     new VueLoaderPlugin(),
     new CleanWebpackPlugin(['dist']),
     new CopyWebpackPlugin([{
@@ -74,12 +76,10 @@ module.exports = {
     }]),
   ],
   devtool: "source-map", // enum
-  serve: {
+  devServer: {
+    noInfo: true,
     open: true,
-    content: path.resolve(__dirname, 'src/'),
-    devMiddleware: {
-      publicPath: '/js/',
-    },
-    clipboard: false,
+    openPage: 'src/',
+    hot: true,
   },
 };
