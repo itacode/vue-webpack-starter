@@ -4,7 +4,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
-module.exports = {
+const config = {
   entry: {
     main: './src/app/main.js',
   },
@@ -65,15 +65,7 @@ module.exports = {
     },
   },
   plugins: [
-    new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
     new VueLoaderPlugin(),
-    new CleanWebpackPlugin(['dist']),
-    new CopyWebpackPlugin([{
-      from: 'src/',
-      to: path.resolve(__dirname, 'dist/'),
-      ignore: ['app/**/*', 'css/**/*.scss'],
-    }]),
   ],
   devtool: "source-map", // enum
   devServer: {
@@ -82,4 +74,22 @@ module.exports = {
     openPage: 'src/',
     hot: true,
   },
+};
+
+module.exports = (env, argv) => {
+
+  if (argv.mode === 'development') {
+    config.plugins.push(new webpack.HotModuleReplacementPlugin());
+  }
+
+  if (argv.mode === 'production') {
+    config.plugins.push(new CleanWebpackPlugin(['dist']),
+      new CopyWebpackPlugin([{
+        from: 'src/',
+        to: path.resolve(__dirname, 'dist/'),
+        ignore: ['app/**/*', 'css/**/*.scss'],
+      }]));
+  }
+
+  return config;
 };
