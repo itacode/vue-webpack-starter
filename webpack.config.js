@@ -11,7 +11,7 @@ const config = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist/js'),
-    publicPath: '/src/js/',
+    publicPath: '/js/',
   },
   module: {
     rules: [{
@@ -69,10 +69,10 @@ const config = {
   ],
   devtool: "source-map", // enum
   devServer: {
-    noInfo: true,
-    open: true,
-    openPage: 'src/',
+    contentBase: 'src',
     hot: true,
+    open: true,
+    stats: "errors-only",
   },
 };
 
