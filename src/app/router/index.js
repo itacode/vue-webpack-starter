@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Foo from '../components/foo.vue';
-import Bar from '../components/bar.vue';
+import Foo from '../views/foo.vue';
+import Bar from '../views/bar.vue';
 
 // You don't need to do this when using global script tags.
 Vue.use(VueRouter);

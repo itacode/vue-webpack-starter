@@ -3,7 +3,7 @@ import 'core-js/es6/promise';
 
 // App
 import Vue from 'vue';
-import app from './components/app.vue';
+import app from './app.vue';
 import router from './router/';
 import store from './store/';
 import Axios from "axios";
