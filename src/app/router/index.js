@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import Home from '../views/home.vue';
 import Foo from '../views/foo.vue';
 import Bar from '../views/bar.vue';
 
@@ -7,6 +8,11 @@ import Bar from '../views/bar.vue';
 Vue.use(VueRouter);
 
 const routes = [
+  {
+    path: '/',
+    component: Home,
+    name: 'home',
+  },
   {
     path: '/foo',
     component: Foo,
@@ -17,9 +23,14 @@ const routes = [
     component: Bar,
     name: 'bar',
   },
+  {
+    path: '*',
+    name: '/',
+  },
 ];
 const router = new VueRouter({
   routes,
+  linkExactActiveClass: 'main_nav_active',
 });
 
 export default router;

@@ -13,11 +13,14 @@ export default {
   <div id="app">
     <h1>{{msg}}</h1>
     <img src="img/top_img02.jpg">
-    <h2>Essential Links</h2>
-    <p>
-      <router-link to="/foo">Go to foo</router-link>
-      <router-link to="/bar">Go to bar</router-link>
-    </p>
+    <nav>
+      <h2>Navigation menu</h2>
+      <ul>
+        <li><router-link to="/">Home</router-link></li>
+        <li><router-link to="/foo">Foo</router-link></li>
+        <li><router-link to="/bar">Bar</router-link></li>
+      </ul>
+    </nav>
     <router-view></router-view>
   </div>
 </template>
@@ -38,7 +41,10 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-
+.main_nav_active {
+  font-weight: bold;
+  text-decoration: none;
+}
 .test_vue_scss_prefixer {
   display: flex;
   transform: translateX(10);
