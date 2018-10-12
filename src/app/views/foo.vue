@@ -19,7 +19,7 @@ export default {
 
 <template>
   <div>
-    <p>This is Foo with axios</p>
+    <p>Foo route with axios</p>
     <p>{{fetchedData}}</p>
   </div>
 </template>

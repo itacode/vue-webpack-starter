@@ -25,7 +25,7 @@ const routes = [
   },
   {
     path: '*',
-    name: '/',
+    redirect: '/',
   },
 ];
 const router = new VueRouter({

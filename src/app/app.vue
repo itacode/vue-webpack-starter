@@ -15,7 +15,7 @@ export default {
     <img src="img/top_img02.jpg">
     <nav>
       <h2>Navigation menu</h2>
-      <ul>
+      <ul class="main_nav_list">
         <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/foo">Foo</router-link></li>
         <li><router-link to="/bar">Bar</router-link></li>
@@ -40,6 +40,15 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.main_nav_list {
+  margin-bottom: 20px;
+  > li {
+    display: inline-block;
+    &:nth-child(n+2) {
+      margin-left: 10px;
+    }
+  }
 }
 .main_nav_active {
   font-weight: bold;

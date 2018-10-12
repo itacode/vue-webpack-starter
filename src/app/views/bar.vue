@@ -1,3 +1,3 @@
 <template>
-  <p>This is Bar</p>
+  <p>Bar route</p>
 </template>
