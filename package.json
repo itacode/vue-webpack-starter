@@ -4,7 +4,7 @@
   "description": "Easily add vue to an existing page.",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --progress --mode development",
+    "serve": "webpack-dev-server --progress --mode development",
     "build": "webpack --mode production",
     "webpack": "webpack --mode development",
     "webpack:watch": "webpack --progress --watch --mode development"
