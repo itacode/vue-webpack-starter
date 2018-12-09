@@ -8,10 +8,14 @@ img, video {
   height: auto;
 }
 
-body {
+html {
+  color: #222;
   font-size: 14px;
   line-height: 1.6;
   font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, "メイリオ", "MS PGothic", "ＭＳ Ｐゴシック", Osaka, arial, helvetica, sans-serif;
+}
+
+body {
   background-color: #fff;
 }
 
@@ -40,7 +44,62 @@ a:hover {
   }
 }
 
-/* Form controls */
+/**
+ * Helpers
+ */
+/* Image replacement */
+.ir {
+  overflow: hidden;
+  text-align: left;
+  text-indent: -999em;
+}
+
+.ir br {
+  display: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+/* Clearfix */
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* Rollover */
+.btn_roll01:hover img {
+  opacity: 0.7;
+}
+
+.btn_roll02:hover {
+  opacity: 0.7;
+}
+
+/**
+ * Form controls
+ */
 ::-webkit-input-placeholder {
   color: #6f6f6f;
 }
@@ -66,6 +125,7 @@ textarea, [type="text"], [type="email"], [type="tel"], [type="search"], [type="p
   border: 1px solid #a0a0a0;
   padding: 0.2em 0.5em;
   font-size: 16px;
+  min-width: 0;
 }
 
 textarea:focus, [type="text"]:focus, [type="email"]:focus, [type="tel"]:focus, [type="search"]:focus, [type="password"]:focus {
