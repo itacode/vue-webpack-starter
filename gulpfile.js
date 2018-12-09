@@ -23,7 +23,7 @@ function style() {
 
 gulp.task('style', style);
 
-gulp.task('style:watch', function () {
+gulp.task('watch', function () {
   gulp.watch(sassSource, style).on('change', function (path) {
     console.log('Changed: ' + path);
   });

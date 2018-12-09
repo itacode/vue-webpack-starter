@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /**
- * Reset
+ * Reset (modified Meyer's one)
  * Public domain. http://meyerweb.com/eric/tools/css/reset/
  */
 
@@ -10,15 +10,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, main {
 	display: block;
-}
-body {
-	line-height: 1;
 }
 ol, ul {
 	list-style: none;
@@ -32,7 +27,8 @@ blockquote:before, blockquote:after, q:before, q:after {
 }
 table {
 	border-collapse: collapse;
-	border-spacing: 0;
+  border-spacing: 0;
+  font: inherit;
 }
 
 /**
@@ -41,25 +37,17 @@ table {
  */
 
 html {
+  line-height: 1.15;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 }
 hr {
 	box-sizing: content-box;
-	display: block;
 	overflow: visible;
 	height: 0;
-	border: 0;
-	margin: 1em 0;
-	padding: 0;
-	border-top: 1px solid #ccc;
 }
 a {
 	background-color: transparent;
-	-webkit-text-decoration-skip: objects;
-}
-a:active, a:hover {
-	outline-width: 0;
 }
 abbr[title] {
 	border-bottom: none;
@@ -68,13 +56,6 @@ abbr[title] {
 }
 pre, code, kbd, samp {
 	font-family: monospace, monospace;
-}
-dfn {
-	font-style: italic;
-}
-mark {
-	background-color: #ff0;
-	color: #000;
 }
 sub, sup {
 	font-size: 75%;
@@ -88,38 +69,28 @@ sub {
 sup {
 	top: -0.5em;
 }
-audio, canvas, progress, video {
-	display: inline-block;
+audio, canvas, video {
+  display: inline-block;
 }
-audio:not([controls]) {
-	display: none;
-	height: 0;
+audio, canvas, iframe, img, svg, video {
+	vertical-align: middle;
 }
 progress {
 	vertical-align: baseline;
 }
-template, [hidden] {
-	display: none;
-}
-svg:not(:root) {
-	overflow: hidden;
-}
 button, input, optgroup, select, textarea {
-	color: inherit;
-	font: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
 	margin: 0;
-}
-optgroup {
-	font-weight: bold;
 }
 button, input {
 	overflow: visible;
-	line-height: normal;
 }
 button, select {
 	text-transform: none;
 }
-button, html [type="button"], [type="reset"], [type="submit"] {
+button, [type="button"], [type="reset"], [type="submit"] {
 	-webkit-appearance: button;
 }
 button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
@@ -128,6 +99,17 @@ button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-mo
 }
 button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring {
 	outline: 1px dotted ButtonText;
+}
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
 }
 textarea {
 	overflow: auto;
@@ -145,29 +127,12 @@ textarea {
 	box-sizing: border-box;
 	outline-offset: -2px;
 }
-[type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration {
+[type="search"]::-webkit-search-decoration {
 	-webkit-appearance: none;
-}
-::-webkit-input-placeholder {
-	color: inherit;
-	opacity: 0.54;
-	line-height: normal;
 }
 ::-webkit-file-upload-button {
 	-webkit-appearance: button;
 	font: inherit;
-
-}
-fieldset {
-  padding: 0.35em 0.75em 0.625em;
-}
-legend {
-  box-sizing: border-box;
-  color: inherit;
-  display: table;
-  max-width: 100%;
-  padding: 0;
-  white-space: normal;
 }
 ::-moz-selection {
 	background: #b3d4fc;
@@ -177,54 +142,12 @@ legend {
 	background: #b3d4fc;
 	text-shadow: none;
 }
-audio, canvas, iframe, img, svg, video {
-	vertical-align: middle;
+details {
+  display: block;
 }
-
-/**
- * Helpers
- */
-
-
-/* Image replacement */
-
-.ir {
-	overflow: hidden;
-	text-align: left;
-	text-indent: -999em;
+summary {
+  display: list-item;
 }
-.ir br {
+template, [hidden] {
 	display: none;
-}
-.visuallyhidden {
-	border: 0;
-	clip: rect(0 0 0 0);
-	-webkit-clip-path: inset(50%);
-	clip-path: inset(50%);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-	white-space: nowrap;
-}
-
-/* Clearfix */
-
-.clearfix:before, .clearfix:after {
-	content: " ";
-	display: table;
-}
-.clearfix:after {
-	clear: both;
-}
-
-/* Rollover */
-
-.btnRoll01:hover img {
-	opacity: 0.7;
-}
-.btnRoll02:hover {
-	opacity: 0.7;
 }

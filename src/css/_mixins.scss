@@ -8,9 +8,17 @@
     clear: both;
   }
 }
-
+@mixin opacity {
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+@mixin hoverOpacity {
+  &:hover {
+    @include opacity;
+  }
+}
 @mixin mq($media) {
-  @media (min-width: $media + px) {
+  @media (min-width: $media) {
     @content;
   }
 }
