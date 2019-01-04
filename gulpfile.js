@@ -21,10 +21,12 @@ function style() {
   return stream;
 }
 
-gulp.task('style', style);
-
-gulp.task('watch', function () {
+function watch(cb) {
   gulp.watch(sassSource, style).on('change', function (path) {
     console.log('Changed: ' + path);
   });
-});
+  cb();
+}
+
+module.exports.style = style;
+module.exports.watch = watch;
