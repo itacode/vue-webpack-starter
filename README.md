@@ -8,11 +8,13 @@ It is a ready to use template, to start developing single page applications with
 - vue.js
 - vuex
 - vue-router
-- promise polyfill
 - axios
+- promise polyfill
 - webpack 4
 - webpack-dev-server with hot reload
 - babel 7
+- vue-loader
+- eslint
 - autoprefixer
 - scss-loader
 - gulp 4 for compiling scss

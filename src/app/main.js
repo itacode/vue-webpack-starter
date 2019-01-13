@@ -15,7 +15,7 @@ Object.defineProperty(Vue.prototype, '$http', {
   }
 });
 
-var vm = new Vue({
+new Vue({
   el: '#app',
   render: h => h(app),
   router,

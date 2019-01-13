@@ -8,7 +8,7 @@
 
   $.fn.smoothScrollDP = function () {
 
-    return this.each(function (e) {
+    return this.each(function () {
       $(this).on("click", function (e) {
         var target = $(this.hash);
         if (history.pushState) {
