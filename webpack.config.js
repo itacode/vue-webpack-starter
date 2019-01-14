@@ -72,14 +72,14 @@ const config = {
   plugins: [
     new VueLoaderPlugin(),
   ],
-  devtool: "source-map", // enum
+  devtool: 'source-map', // enum
   devServer: {
     contentBase: 'src',
     hot: true,
     host: process.env.HOST, // Defaults to `localhost`
     port: process.env.PORT, // Defaults to 8080
     open: true,
-    stats: "errors-only",
+    stats: 'minimal',
     overlay: true,
   },
 };

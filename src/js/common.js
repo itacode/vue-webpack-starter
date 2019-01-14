@@ -4,12 +4,12 @@
  */
 ;(function ($, window, document, undefined) {
 
-  "use strict";
+  'use strict';
 
   $.fn.smoothScrollDP = function () {
 
     return this.each(function () {
-      $(this).on("click", function (e) {
+      $(this).on('click', function (e) {
         var target = $(this.hash);
         if (history.pushState) {
           history.pushState(null, null, this.hash);
@@ -32,59 +32,61 @@
 /**
  * page top button
  */
+;(function ($, window, document, undefined) {
+  $(function () {
 
-$(function () {
+    'use strict';
 
-  "use strict";
+    var $top = $('#js_pagetop_btn'),
+      $window = $(window),
+      scrolled;
 
-  var $top = $('#js_pagetop_btn'),
-    $window = $(window),
-    scrolled;
-
-  var scrollHandler = function () {
-    scrolled = $window.scrollTop();
-    if (scrolled > 300) {
-      $top.addClass("js_pagetop_btn_active");
-    } else {
-      $top.removeClass("js_pagetop_btn_active");
+    if ($top.length) {
+      $window.scroll(libdan.debounce(onScroll, 250));
+      $top.on('click', function (e) {
+        e.preventDefault();
+        $('html, body').animate({
+          scrollTop: '0px'
+        }, 1000);
+      });
+      $window.scroll();
     }
-  };
 
-  if ($top.length) {
-    $window.scroll(libdan.debounce(scrollHandler, 250));
-    $top.on('click', function (e) {
-      e.preventDefault();
-      $('html, body').animate({
-        scrollTop: '0px'
-      }, 1000);
-    });
-    $window.scroll();
-  }
-});
+    function onScroll() {
+      scrolled = $window.scrollTop();
+      if (scrolled > 300) {
+        $top.addClass('js_pagetop_btn_active');
+      } else {
+        $top.removeClass('js_pagetop_btn_active');
+      }
+    };
+  });
+})(jQuery, window, document);
 
 /**
  * Ligthbox (blackbox)
  */
 ;(function ($, window, document, undefined) {
 
-  "use strict";
+  'use strict';
 
   $.fn.blackboxDP = function (options) {
+    options = options || {};
 
     return this.each(function () {
 
-      var $wrap = !!options.overlayID ? $('#' + options.overlayID) : $(this.hash),
-        $layer = $wrap.find('.js_layer'),
-        $inner = $wrap.find('.blackbox_inner'),
+      var $wrap = options.overlayID ? $('#' + options.overlayID) : $(this.hash),
+        $layer = $wrap.find('#js_blackbox_layer'),
+        $inner = $wrap.find('#js_blackbox_inner'),
         $trigger = $(this),
         $img,
-        isLinkedImageMode = !!options.linkedImage || false;
+        isLinkedImageMode = options.linkedImage || false;
 
       if (isLinkedImageMode) {
         $img = $wrap.find('#js_image');
       }
 
-      $trigger.on("click", function (e) {
+      $trigger.on('click', function (e) {
         var $this = $(this);
         e.preventDefault();
 
@@ -92,27 +94,27 @@ $(function () {
         if (isLinkedImageMode) {
           $img.attr('src', $this.attr('href'));
         }
-        $("body").css({
-          "height": "100%",
-          "overflow": "hidden"
+        $('body').css({
+          'height': '100%',
+          'overflow': 'hidden'
         });
         $wrap.show();
         $layer.animate({
           opacity: 1
         });
         setTimeout(function () {
-          $inner.addClass("js_blackbox_play");
+          $inner.addClass('js_blackbox_play');
         }, 10);
       });
-      $wrap.on("click", ".js_close", function (e) {
+      $wrap.on('click', '.js_close', function (e) {
         var $target = $(e.target);
-        if ($target.hasClass("js_close")) {
+        if ($target.hasClass('js_close')) {
           e.preventDefault();
-          $("body").css({
-            "height": "",
-            "overflow": ""
+          $('body').css({
+            'height': '',
+            'overflow': ''
           });
-          $inner.removeClass("js_blackbox_play");
+          $inner.removeClass('js_blackbox_play');
           $wrap.hide();
           $layer.css({
             opacity: 0
@@ -121,5 +123,4 @@ $(function () {
       });
     });
   };
-
 })(jQuery, window, document);

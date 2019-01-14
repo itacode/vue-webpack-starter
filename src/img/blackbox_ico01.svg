@@ -1,0 +1,12 @@
+<svg id="blackbox_close01" xmlns="http://www.w3.org/2000/svg" width="40" height="40.313" viewBox="0 0 40 40.313">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Rounded_Rectangle_1" data-name="Rounded Rectangle 1" class="cls-1" d="M305.832,51.91L338.49,84.567c1.591,1.591,1.931,3.831.76,5s-3.412.831-5-.76L301.589,56.152c-1.591-1.591-1.931-3.831-.76-5S304.241,50.318,305.832,51.91Z" transform="translate(-300 -49.969)"/>
+  <path id="Rounded_Rectangle_1_copy" data-name="Rounded Rectangle 1 copy" class="cls-1" d="M301.478,84.266l32.786-32.811c1.6-1.6,3.846-1.941,5.022-.764s0.835,3.427-.763,5.026L305.737,88.529c-1.6,1.6-3.846,1.941-5.022.764S299.88,85.865,301.478,84.266Z" transform="translate(-300 -49.969)"/>
+</svg>

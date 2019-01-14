@@ -11,13 +11,33 @@
 </head>
 
 <body>
+
   <div id="app"></div>
 
+  <div style="height: 2000px;">
+    <p style="margin: 20px;"><a href="#js_blackbox01" class="js_blackbox_open">open blackbox</a></p>
+  </div>
+  <div class="blackbox_wrap" id="js_blackbox01">
+    <div class="blackbox_layer" id="js_blackbox_layer">
+      <div class="blackbox_inner" id="js_blackbox_inner">
+        <a href="" class="blackbox_close js_close">close</a>
+        <p>dummy<br>dummy</p>
+      </div>
+    </div>
+  </div>
+  <div><a href="pagetop" class="pagetop_btn" id="js_pagetop_btn">page top</a></div>
 
 <script src="js/vendor/jquery.min.js"></script>
 <script src="js/vendor/jquery.easing.min.js"></script>
 <script src="js/libdan.js"></script>
 <script src="js/main.bundle.js"></script>
 <script src="js/common.js"></script>
+<script>
+  (function ($) {
+    $(function () {
+      $('.js_blackbox_open').blackboxDP();
+    });
+  })(jQuery);
+</script>
 </body>
 </html>

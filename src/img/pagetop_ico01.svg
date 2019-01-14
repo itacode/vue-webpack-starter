@@ -1,0 +1,12 @@
+<svg id="pagetop_img01" xmlns="http://www.w3.org/2000/svg" width="39.781" height="23.375" viewBox="0 0 39.781 23.375">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Rounded_Rectangle_1_copy_2" data-name="Rounded Rectangle 1 copy 2" class="cls-1" d="M339.3,124.586l-17.409-17.455c-0.848-.85-2.478-0.6-3.641.567s-1.417,2.8-.569,3.647L335.084,128.8c0.848,0.85,2.479.6,3.641-.567S340.143,125.436,339.3,124.586Z" transform="translate(-300 -106.625)"/>
+  <path id="Rounded_Rectangle_1_copy_3" data-name="Rounded Rectangle 1 copy 3" class="cls-1" d="M300.5,125.208l17.722-17.695c0.863-.862,2.523-0.605,3.706.575s1.443,2.835.58,3.7L304.782,129.48c-0.864.862-2.524,0.605-3.707-.575S299.632,126.071,300.5,125.208Z" transform="translate(-300 -106.625)"/>
+</svg>

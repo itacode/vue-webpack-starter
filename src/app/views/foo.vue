@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "foo-component",
+  name: 'foo-component',
 
   data() {
     return {
@@ -9,7 +9,7 @@ export default {
   },
   methods: {
     fetchData() {
-      this.$http.get("https://swapi.co/api/people/1/").then(response => {
+      this.$http.get('https://swapi.co/api/people/1/').then(response => {
         this.fetchedData = response.data;
       });
     },
