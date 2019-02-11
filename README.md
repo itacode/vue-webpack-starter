@@ -4,18 +4,18 @@ I wanted a Vue.js lightweight starter template, with newer versions of less tool
 This template uses webpack 4 and the webpack-dev-server with hot reload enabled.
 It is a ready to use template, to start developing single page applications with Vue.js single file components.
 
-## Main characteristics
-- vue.js
-- vuex
-- vue-router
-- axios
-- promise polyfill
-- webpack 4
-- webpack-dev-server with hot reload
-- babel 7
-- vue-loader
-- eslint
-- autoprefixer
-- scss-loader
-- gulp 4 for compiling scss
-- css original reset, that merges Meyer's reset with normalize.css
+## Features
+- Vue.js
+- Vuex
+- Vue-router
+- Axios
+- Promise polyfill
+- Webpack 4
+- Webpack-dev-server with hot reload
+- Babel 7
+- Vue-loader
+- ESLint
+- Autoprefixer
+- Scss-loader
+- Gulp 4 for compiling scss
+- Css original reset, that merges Meyer's reset with normalize.css
