@@ -10,7 +10,7 @@ const config = {
   },
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist/js'),
+    path: path.resolve(process.cwd(), 'dist/js'),
     publicPath: '/js/',
   },
   module: {
@@ -91,10 +91,14 @@ module.exports = (env, argv) => {
   }
 
   if (argv.mode === 'production') {
-    config.plugins.push(new CleanWebpackPlugin(['dist']),
+    config.plugins.push(new CleanWebpackPlugin({
+        dangerouslyAllowCleanPatternsOutsideProject: true,
+        dry: false,
+        cleanOnceBeforeBuildPatterns: [path.resolve(process.cwd(), 'dist/**/*')],
+      }),
       new CopyWebpackPlugin([{
         from: 'src/',
-        to: path.resolve(__dirname, 'dist/'),
+        to: path.resolve(process.cwd(), 'dist/'),
         ignore: ['app/**/*', 'css/**/*.scss'],
       }]));
   }
