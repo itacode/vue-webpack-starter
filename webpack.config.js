@@ -74,7 +74,7 @@ const config = {
   ],
   devtool: 'source-map', // enum
   devServer: {
-    contentBase: 'src',
+    contentBase: path.resolve(process.cwd(), 'src'),
     hot: true,
     host: process.env.HOST, // Defaults to `localhost`
     port: process.env.PORT, // Defaults to 8080

@@ -4,8 +4,11 @@ export default {
 
   data() {
     return {
-      fetchedData: this.fetchData(),
+      fetchedData: null,
     };
+  },
+  created() {
+    this.fetchData();
   },
   methods: {
     fetchData() {
