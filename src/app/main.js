@@ -1,5 +1,5 @@
 // Polyfills
-import 'core-js/es/promise';
+import '@babel/polyfill/node_modules/core-js/es6/promise';
 
 // App
 import Vue from 'vue';

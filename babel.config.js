@@ -7,6 +7,9 @@ module.exports = function (api) {
         '@babel/preset-env',
         {
           modules: false,
+          // Adds specific imports for polyfills when they are used in each file.
+          useBuiltIns: 'usage',
+          corejs: 3,
         },
       ],
     ],
