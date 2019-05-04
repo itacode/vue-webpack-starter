@@ -11,10 +11,9 @@ export default {
     this.fetchData();
   },
   methods: {
-    fetchData() {
-      this.$http.get('https://swapi.co/api/people/1/').then(response => {
-        this.fetchedData = response.data;
-      });
+    async fetchData() {
+      let response = await this.$http.get('https://swapi.co/api/people/1/');
+      this.fetchedData = response.data;
     },
   },
 };
