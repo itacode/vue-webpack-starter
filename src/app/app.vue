@@ -12,7 +12,7 @@ export default {
 <template>
   <div id="app">
     <h1>{{msg}}</h1>
-    <img src="img/top_img02.jpg">
+    <img src="images/top_img02.jpg">
     <nav>
       <h2>Navigation menu</h2>
       <ul class="main_nav_list">

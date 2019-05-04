@@ -210,7 +210,7 @@ select:focus {
   top: -20px;
   width: 40px;
   height: 40px;
-  background: rgba(0, 0, 0, 0.7) url(../img/blackbox_ico01.svg) no-repeat 50% 50%;
+  background: rgba(0, 0, 0, 0.7) url(../images/blackbox_ico01.svg) no-repeat 50% 50%;
   background-size: 30px 30px;
   border-radius: 4px;
   text-indent: -9999px;
@@ -225,7 +225,7 @@ select:focus {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.8) url(../img/pagetop_ico01.svg) no-repeat 50% 50%;
+  background: rgba(0, 0, 0, 0.8) url(../images/pagetop_ico01.svg) no-repeat 50% 50%;
   background-size: 20px auto;
   visibility: hidden;
   opacity: 0;
