@@ -17,5 +17,6 @@ It is a ready to use template, to start developing single page applications with
 - ESLint
 - Autoprefixer
 - Scss-loader
+- CSS extraction to a file
 - Gulp 4 for compiling scss
 - Css original reset, that merges Meyer's reset with normalize.css
