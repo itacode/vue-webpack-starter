@@ -1,9 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
-var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (env, argv) => {
   const config = {
@@ -16,12 +16,14 @@ module.exports = (env, argv) => {
       publicPath: '/js/',
     },
     module: {
-      rules: [{
+      rules: [
+        {
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
           exclude: /node_modules/,
-        }, {
+        },
+        {
           test: /\.vue$/,
           use: 'vue-loader',
         },
@@ -36,9 +38,7 @@ module.exports = (env, argv) => {
         {
           test: /\.css$/,
           use: [
-            argv.mode !== 'production' ?
-            'vue-style-loader' :
-            MiniCssExtractPlugin.loader,
+            argv.mode !== 'production' ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
             {
               loader: 'css-loader',
               options: {
@@ -51,9 +51,7 @@ module.exports = (env, argv) => {
         {
           test: /\.scss$/,
           use: [
-            argv.mode !== 'production' ?
-            'vue-style-loader' :
-            MiniCssExtractPlugin.loader,
+            argv.mode !== 'production' ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
             'css-loader',
             'postcss-loader',
             'sass-loader',
@@ -95,7 +93,8 @@ module.exports = (env, argv) => {
   }
 
   if (argv.mode === 'production') {
-    config.plugins.push(new MiniCssExtractPlugin({
+    config.plugins.push(
+      new MiniCssExtractPlugin({
         filename: '../css/app.[name].bundle.css',
       }),
       new CleanWebpackPlugin({
@@ -107,7 +106,8 @@ module.exports = (env, argv) => {
         from: 'src/',
         to: path.resolve(process.cwd(), 'dist/'),
         ignore: ['app/**/*', 'css/**/*.scss'],
-      }]));
+      }])
+    );
   }
 
   return config;
