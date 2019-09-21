@@ -21,7 +21,7 @@
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.0.4",
     "css-loader": "^3.2.0",
-    "eslint": "^6.3.0",
+    "eslint": "^6.4.0",
     "eslint-loader": "^3.0.0",
     "eslint-plugin-vue": "^5.2.3",
     "file-loader": "^4.2.0",
@@ -36,9 +36,9 @@
     "sass-loader": "^8.0.0",
     "vue-loader": "^15.7.0",
     "vue-template-compiler": "^2.6.10",
-    "webpack": "^4.39.3",
-    "webpack-cli": "^3.3.8",
-    "webpack-dev-server": "^3.8.0"
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.1"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.0",
