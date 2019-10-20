@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import Vue from 'Vue';
 import Axios from 'axios';
 
 // Bind Axios to Vue.
