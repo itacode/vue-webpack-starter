@@ -15,6 +15,7 @@ It is a ready to use template, to start developing single page applications with
 - Babel 7
 - Vue-loader
 - ESLint
+- Jest
 - Autoprefixer
 - Scss-loader
 - CSS extraction to a file
