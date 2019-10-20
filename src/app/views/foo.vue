@@ -1,3 +1,10 @@
+<template>
+  <div>
+    <p>Foo route with axios</p>
+    <p>{{fetchedData}}</p>
+  </div>
+</template>
+
 <script>
 export default {
   name: 'foo-component',
@@ -12,16 +19,14 @@ export default {
   },
   methods: {
     async fetchData() {
-      let response = await this.$http.get('https://swapi.co/api/people/1/');
+      let response;
+      try {
+        response = await this.$http.get('https://swapi.co/api/people/1/');
+      } catch (error) {
+        console.error(`Error fetching data: ${error}`);
+      }
       this.fetchedData = response.data;
     },
   },
 };
 </script>
-
-<template>
-  <div>
-    <p>Foo route with axios</p>
-    <p>{{fetchedData}}</p>
-  </div>
-</template>

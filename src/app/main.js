@@ -1,19 +1,8 @@
-// Polyfills
-import 'core-js/modules/es.promise';
-
-// App
 import Vue from 'vue';
-import app from './app.vue';
+import './plugins';
 import router from './router/';
 import store from './store/';
-import Axios from 'axios';
-
-
-Object.defineProperty(Vue.prototype, '$http', {
-  get() {
-    return Axios;
-  }
-});
+import app from './app.vue';
 
 new Vue({
   el: '#app',
