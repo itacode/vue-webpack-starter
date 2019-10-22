@@ -11,9 +11,8 @@ module.exports = (env, argv) => {
       main: './src/app/main.js',
     },
     output: {
-      filename: 'app.[name].bundle.js',
-      path: path.resolve(__dirname, 'dist/js'),
-      publicPath: '/js/',
+      filename: 'js/app.[name].bundle.js',
+      path: path.resolve(__dirname, 'dist'),
     },
     module: {
       rules: [
@@ -95,16 +94,12 @@ module.exports = (env, argv) => {
   if (argv.mode === 'production') {
     config.plugins.push(
       new MiniCssExtractPlugin({
-        filename: '../css/app.[name].bundle.css',
+        filename: 'css/app.[name].bundle.css',
       }),
-      new CleanWebpackPlugin({
-        dangerouslyAllowCleanPatternsOutsideProject: true,
-        dry: false,
-        cleanOnceBeforeBuildPatterns: [path.resolve(__dirname, 'dist/**/*')],
-      }),
+      new CleanWebpackPlugin(),
       new CopyWebpackPlugin([{
-        from: 'src/',
-        to: path.resolve(__dirname, 'dist/'),
+        from: 'src',
+        to: path.resolve(__dirname, 'dist'),
         ignore: ['app/**/*', 'css/**/*.scss'],
       }])
     );
