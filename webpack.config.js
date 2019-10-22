@@ -4,6 +4,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env, argv) => {
   const config = {
@@ -88,7 +89,12 @@ module.exports = (env, argv) => {
   };
 
   if (argv.mode === 'development') {
-    config.plugins.push(new webpack.HotModuleReplacementPlugin());
+    config.plugins.push(
+      new webpack.HotModuleReplacementPlugin(),
+      new HtmlWebpackPlugin({
+        template: './src/index.html'
+      })
+    );
   }
 
   if (argv.mode === 'production') {
@@ -101,7 +107,10 @@ module.exports = (env, argv) => {
         from: 'src',
         to: path.resolve(__dirname, 'dist'),
         ignore: ['app/**/*', 'css/**/*.scss'],
-      }])
+      }]),
+      new HtmlWebpackPlugin({
+        template: './src/index.html'
+      })
     );
   }
 
