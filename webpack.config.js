@@ -12,7 +12,7 @@ module.exports = (env, argv) => {
     },
     output: {
       filename: 'app.[name].bundle.js',
-      path: path.resolve(process.cwd(), 'dist/js'),
+      path: path.resolve(__dirname, 'dist/js'),
       publicPath: '/js/',
     },
     module: {
@@ -78,7 +78,7 @@ module.exports = (env, argv) => {
     ],
     devtool: 'source-map', // enum
     devServer: {
-      contentBase: path.resolve(process.cwd(), 'src'),
+      contentBase: './src',
       hot: true,
       host: process.env.HOST, // Defaults to `localhost`
       port: process.env.PORT, // Defaults to 8080
@@ -100,11 +100,11 @@ module.exports = (env, argv) => {
       new CleanWebpackPlugin({
         dangerouslyAllowCleanPatternsOutsideProject: true,
         dry: false,
-        cleanOnceBeforeBuildPatterns: [path.resolve(process.cwd(), 'dist/**/*')],
+        cleanOnceBeforeBuildPatterns: [path.resolve(__dirname, 'dist/**/*')],
       }),
       new CopyWebpackPlugin([{
         from: 'src/',
-        to: path.resolve(process.cwd(), 'dist/'),
+        to: path.resolve(__dirname, 'dist/'),
         ignore: ['app/**/*', 'css/**/*.scss'],
       }])
     );
