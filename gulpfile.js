@@ -54,6 +54,11 @@ function watchForServer(cb) {
 
 const dev = gulp.series(watch, serve, watchForServer);
 
+// Compile scss files
 module.exports.style = style;
+
+// Watch and compile scss files
 module.exports.watch = watch;
+
+// Watch, compile scss files and start a server, auto-reloading html and injecting css
 module.exports.default = dev;
