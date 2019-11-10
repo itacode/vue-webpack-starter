@@ -1,4 +1,4 @@
-module.exports = function (api) {
+module.exports = function(api) {
   api.cache(true);
 
   const config = {
@@ -13,18 +13,19 @@ module.exports = function (api) {
         },
       ],
     ],
-    plugins: [
-      '@babel/plugin-transform-runtime',
-    ],
+    plugins: ['@babel/plugin-transform-runtime'],
     // For Jest
     env: {
       test: {
         presets: [
-          ['@babel/preset-env', {
-            targets: {
-              node: 'current'
-            }
-          }],
+          [
+            '@babel/preset-env',
+            {
+              targets: {
+                node: 'current',
+              },
+            },
+          ],
         ],
       },
     },

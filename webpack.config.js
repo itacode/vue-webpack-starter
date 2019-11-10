@@ -30,20 +30,19 @@ module.exports = (env, argv) => {
         {
           test: /\.js$/,
           use: 'babel-loader',
-          exclude: file => (
-            /node_modules/.test(file) &&
-            !/\.vue\.js/.test(file)
-          ),
+          exclude: file => /node_modules/.test(file) && !/\.vue\.js/.test(file),
         },
         {
           test: /\.css$/,
           use: [
-            argv.mode !== 'production' ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
+            argv.mode !== 'production'
+              ? 'vue-style-loader'
+              : MiniCssExtractPlugin.loader,
             {
               loader: 'css-loader',
               options: {
                 importLoaders: 1,
-              }
+              },
             },
             'postcss-loader',
           ],
@@ -51,7 +50,9 @@ module.exports = (env, argv) => {
         {
           test: /\.scss$/,
           use: [
-            argv.mode !== 'production' ? 'vue-style-loader' : MiniCssExtractPlugin.loader,
+            argv.mode !== 'production'
+              ? 'vue-style-loader'
+              : MiniCssExtractPlugin.loader,
             'css-loader',
             'postcss-loader',
             'sass-loader',
@@ -73,12 +74,14 @@ module.exports = (env, argv) => {
         vue$: 'vue/dist/vue.esm.js',
       },
     },
-    plugins: [
-      new VueLoaderPlugin(),
-    ],
+    plugins: [new VueLoaderPlugin()],
     devtool: 'source-map', // enum
     devServer: {
       contentBase: './src',
+      // When starting server via the CLI with --watch-content-base
+      watchOptions: {
+        ignored: ['**/*.scss'],
+      },
       hot: true,
       host: process.env.HOST, // Defaults to `localhost`
       port: process.env.PORT, // Defaults to 8080
@@ -92,7 +95,7 @@ module.exports = (env, argv) => {
     config.plugins.push(
       new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin({
-        template: './src/index.html'
+        template: './src/index.html',
       })
     );
   }
@@ -103,13 +106,15 @@ module.exports = (env, argv) => {
         filename: 'css/app.[name].bundle.css',
       }),
       new CleanWebpackPlugin(),
-      new CopyWebpackPlugin([{
-        from: 'src',
-        to: path.resolve(__dirname, 'dist'),
-        ignore: ['app/**/*', 'css/**/*.scss'],
-      }]),
+      new CopyWebpackPlugin([
+        {
+          from: 'src',
+          to: path.resolve(__dirname, 'dist'),
+          ignore: ['app/**/*', 'css/**/*.scss'],
+        },
+      ]),
       new HtmlWebpackPlugin({
-        template: './src/index.html'
+        template: './src/index.html',
       })
     );
   }

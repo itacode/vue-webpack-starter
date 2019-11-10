@@ -2,9 +2,10 @@
   "name": "vue-webpack-lean-starter",
   "version": "1.0.0",
   "description": "Easily add vue to an existing page.",
-  "main": "index.js",
+  "main": "src/app/main.js",
   "scripts": {
     "serve": "webpack-dev-server --progress --mode=development",
+    "serve:watch": "webpack-dev-server --progress --mode=development --watch-content-base",
     "build": "webpack --mode=production",
     "lint": "eslint ./src/app",
     "test:unit": "jest --no-cache --passWithNoTests",
