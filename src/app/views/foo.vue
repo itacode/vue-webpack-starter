@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>Foo route with axios</p>
-    <p>{{fetchedData}}</p>
+    <p v-if="fetchedData">Fetched name: {{fetchedData.name}}</p>
   </div>
 </template>
 
