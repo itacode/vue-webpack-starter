@@ -1,3 +1,4 @@
+import './plugins/polyfills';
 import Vue from 'vue';
 import './plugins';
 import router from './router';
