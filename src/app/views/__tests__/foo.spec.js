@@ -2,7 +2,7 @@ import {
   mount,
 } from '@vue/test-utils';
 import foo from '../../views/foo.vue';
-import '../../plugins';
+import '../../plugins/polyfills';
 
 describe('Foo.fetchedData', () => {
   test('sanity test', () => {
