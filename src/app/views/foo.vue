@@ -23,7 +23,7 @@ export default {
     async fetchData() {
       let response;
       try {
-        response = await Axios.get('https://swapi.co/api/people/1/');
+        response = await Axios.get('https://jsonplaceholder.typicode.com/todos/1');
       } catch (error) {
         console.error(`Error fetching data: ${error}`);
       }
