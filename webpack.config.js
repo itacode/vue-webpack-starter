@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -106,13 +106,16 @@ module.exports = (env, argv) => {
         filename: 'css/app.[name].bundle.css',
       }),
       new CleanWebpackPlugin(),
-      new CopyWebpackPlugin([
-        {
-          from: 'src',
-          to: path.resolve(__dirname, 'dist'),
-          ignore: ['app/**/*', 'css/**/*.scss'],
-        },
-      ]),
+      new CopyPlugin({
+        patterns: [
+          {
+            from: 'src',
+            globOptions: {
+              ignore: ['**/app/**', '**/*.scss', '**/index.html'],
+            },
+          },
+        ],
+      }),
       new HtmlWebpackPlugin({
         template: './src/index.html',
       })
