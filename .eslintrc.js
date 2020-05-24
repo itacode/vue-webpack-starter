@@ -8,7 +8,7 @@ module.exports = {
     jquery: true,
     jest: true,
   },
-  'extends': [
+  extends: [
     'eslint:recommended',
     'plugin:vue/essential',
   ],
