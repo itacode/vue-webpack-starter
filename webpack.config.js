@@ -96,7 +96,7 @@ module.exports = (env, argv) => {
       new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin({
         template: './src/index.html',
-      })
+      }),
     );
   }
 
