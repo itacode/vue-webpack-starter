@@ -5,12 +5,12 @@ import './plugins/polyfills';
 import Vue from 'vue';
 import router from './router';
 import store from './store';
-import app from './app.vue';
+import TheApp from './TheApp.vue';
 import * as types from './store/mutation-types';
 
 new Vue({
   el: '#app',
-  render: h => h(app),
+  render: h => h(TheApp),
   router,
   store,
   created() {

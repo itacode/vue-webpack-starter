@@ -8,7 +8,7 @@
 <script>
 
 export default {
-  name: 'foo-component',
+  name: 'TheFoo',
 
   computed: {
     fetchedData() {

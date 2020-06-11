@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '../views/home.vue';
-import Foo from '../views/foo.vue';
-import Bar from '../views/bar.vue';
+import TheHome from '../views/TheHome.vue';
+import TheFoo from '../views/TheFoo.vue';
+import TheBar from '../views/TheBar.vue';
 
 // You don't need to do this when using global script tags.
 Vue.use(VueRouter);
@@ -10,17 +10,17 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
-    component: Home,
+    component: TheHome,
     name: 'home',
   },
   {
     path: '/foo',
-    component: Foo,
+    component: TheFoo,
     name: 'foo',
   },
   {
     path: '/bar',
-    component: Bar,
+    component: TheBar,
     name: 'bar',
   },
   {
