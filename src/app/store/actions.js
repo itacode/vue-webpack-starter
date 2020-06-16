@@ -8,6 +8,7 @@ export default {
     try {
       res = await Axios.get(env.apiEndpoint);
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error(`Error fetching data: ${error}`);
     }
     commit(types.FETCH_CONTENTS, res.data);

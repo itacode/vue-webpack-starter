@@ -16,7 +16,8 @@ module.exports = {
     'ecmaVersion': 8,
   },
   rules: { // "off" or 0; "warn" or 1; "error" or 2
-    'no-console': process.env.NODE_ENV !== 'production' ? 'off' : 'error',
+    'no-console': process.env.NODE_ENV !== 'production' ? 'warn' : 'error',
+    'no-unused-vars': process.env.NODE_ENV !== 'production' ? 'warn' : 'error',
     indent: [
       'error',
       2,
