@@ -33,6 +33,10 @@ export default {
 </style>
 
 <style lang="scss">
+.test_vue_scss_prefixer {
+  display: flex;
+  transform: translateX(10);
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -53,9 +57,5 @@ export default {
 .main_nav_active {
   font-weight: bold;
   text-decoration: none;
-}
-.test_vue_scss_prefixer {
-  display: flex;
-  transform: translateX(10);
 }
 </style>

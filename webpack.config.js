@@ -42,6 +42,8 @@ module.exports = (env, argv) => {
               loader: 'css-loader',
               options: {
                 importLoaders: 1,
+                // needed after updating to css-loader 4.0.0 (default changed to true)
+                esModule: false,
               },
             },
             'postcss-loader',
@@ -53,7 +55,13 @@ module.exports = (env, argv) => {
             argv.mode !== 'production'
               ? 'vue-style-loader'
               : MiniCssExtractPlugin.loader,
-            'css-loader',
+            {
+              loader: 'css-loader',
+              options: {
+                // needed after updating to css-loader 4.0.0 (default changed to true)
+                esModule: false,
+              },
+            },
             'postcss-loader',
             'sass-loader',
           ],
@@ -96,7 +104,7 @@ module.exports = (env, argv) => {
       new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin({
         template: './src/index.html',
-      }),
+      })
     );
   }
 
