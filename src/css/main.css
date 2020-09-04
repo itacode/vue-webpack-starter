@@ -191,12 +191,10 @@ select:focus {
   border: 2px solid rgba(0, 0, 0, 0.5);
   border-radius: 4px;
   background-color: #fff;
-  -webkit-transform: scale(0) translate3d(0, -100%, 0);
-          transform: scale(0) translate3d(0, -100%, 0);
+  transform: scale(0) translate3d(0, -100%, 0);
 }
 .blackbox_inner.js_blackbox_play {
-  -webkit-transform: scale(1) translate3d(0, 0, 0);
-          transform: scale(1) translate3d(0, 0, 0);
+  transform: scale(1) translate3d(0, 0, 0);
   transition: all 0.4s;
 }
 
@@ -238,6 +236,5 @@ select:focus {
   display: flex;
   border-top: 80px;
   transition: 2s all;
-  -webkit-transform: translate3d(-100%, 0, 0) scale3d(1, 0, 0);
-          transform: translate3d(-100%, 0, 0) scale3d(1, 0, 0);
+  transform: translate3d(-100%, 0, 0) scale3d(1, 0, 0);
 }

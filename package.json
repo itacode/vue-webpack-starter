@@ -57,12 +57,5 @@
     "vue": "^2.6.11",
     "vue-router": "^3.4.3",
     "vuex": "^3.5.1"
-  },
-  "browserslist": [
-    "last 2 versions",
-    "Firefox ESR",
-    "not ie <= 10",
-    "not ie_mob <= 10",
-    "not bb <= 7"
-  ]
+  }
 }
