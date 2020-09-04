@@ -39,11 +39,11 @@ a:hover {
   .sp_br {
     display: none;
   }
+
   .pc_br {
     display: inline;
   }
 }
-
 /**
  * Helpers
  */
@@ -118,7 +118,7 @@ a:hover {
   color: #6f6f6f;
 }
 
-textarea, [type="text"], [type="email"], [type="tel"], [type="search"], [type="password"] {
+textarea, [type=text], [type=email], [type=tel], [type=search], [type=password] {
   -webkit-appearance: none;
   -moz-appearance: none;
   background-color: #fff;
@@ -127,12 +127,11 @@ textarea, [type="text"], [type="email"], [type="tel"], [type="search"], [type="p
   font-size: 16px;
   min-width: 0;
 }
-
-textarea:focus, [type="text"]:focus, [type="email"]:focus, [type="tel"]:focus, [type="search"]:focus, [type="password"]:focus {
+textarea:focus, [type=text]:focus, [type=email]:focus, [type=tel]:focus, [type=search]:focus, [type=password]:focus {
   border-color: #43aeda;
 }
 
-[type="file"] {
+[type=file] {
   cursor: pointer;
 }
 
@@ -144,7 +143,6 @@ select {
   font-size: 16px;
   cursor: pointer;
 }
-
 select:focus {
   border-color: #43aeda;
 }
@@ -173,9 +171,8 @@ select:focus {
   text-align: center;
   white-space: nowrap;
 }
-
 .blackbox_layer:before {
-  content: '';
+  content: "";
   display: inline-block;
   height: 100%;
   vertical-align: middle;
@@ -197,7 +194,6 @@ select:focus {
   -webkit-transform: scale(0) translate3d(0, -100%, 0);
           transform: scale(0) translate3d(0, -100%, 0);
 }
-
 .blackbox_inner.js_blackbox_play {
   -webkit-transform: scale(1) translate3d(0, 0, 0);
           transform: scale(1) translate3d(0, 0, 0);
@@ -232,7 +228,6 @@ select:focus {
   text-align: left;
   text-indent: -999px;
 }
-
 .pagetop_btn.js_pagetop_btn_active {
   visibility: visible;
   opacity: 1;
