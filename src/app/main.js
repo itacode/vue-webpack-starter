@@ -6,7 +6,7 @@ import Vue from 'vue';
 import router from './router';
 import store from './store';
 import TheApp from './TheApp.vue';
-import * as types from './store/mutation-types';
+import { actionsNames } from './store/actions';
 
 new Vue({
   el: '#app',
@@ -18,7 +18,7 @@ new Vue({
   },
   methods: {
     init() {
-      this.$store.dispatch(types.FETCH_CONTENTS);
+      this.$store.dispatch(actionsNames.fetchContents);
     },
   },
 });

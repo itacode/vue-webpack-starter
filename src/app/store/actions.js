@@ -1,9 +1,11 @@
-import * as types from './mutation-types';
+import {mutationsNames} from './mutations';
 import Axios from 'axios';
 import { env } from '../.env';
 
-export default {
-  async [types.FETCH_CONTENTS]({ commit }) {
+const actionsNames = { fetchContents: 'fetchContents' };
+
+const actions = {
+  async [actionsNames.fetchContents]({ commit }) {
     let res;
     try {
       res = await Axios.get(env.apiEndpoint);
@@ -11,6 +13,8 @@ export default {
       // eslint-disable-next-line no-console
       console.error(`Error fetching data: ${error}`);
     }
-    commit(types.FETCH_CONTENTS, res.data);
-  },
+    commit(mutationsNames.setContents, res.data);
+  }
 };
+
+export { actionsNames, actions };

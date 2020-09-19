@@ -1,7 +1,11 @@
-import * as types from './mutation-types';
+const mutationsNames = {
+  setContents: 'setContents',
+};
 
-export default {
-  [types.FETCH_CONTENTS](state, contents) {
+const mutations = {
+  [mutationsNames.setContents](state, contents) {
     state.contents = contents;
   },
 };
+
+export { mutationsNames, mutations };
