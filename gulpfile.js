@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const sass = require('gulp-dart-sass');
 const postcss = require('gulp-postcss');
-const autoprefixer = require('autoprefixer');
 const browserSync = require('browser-sync');
 
 const paths = {
@@ -20,7 +19,7 @@ function style() {
         outputStyle: 'expanded',
       }).on('error', sass.logError)
     )
-    .pipe(postcss([autoprefixer()]))
+    .pipe(postcss())
     .pipe(gulp.dest(paths.cssDest))
     .pipe(server.stream());
   return stream;

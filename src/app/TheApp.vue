@@ -26,6 +26,10 @@ export default {
 </template>
 
 <style>
+/* Test Vue.js CSS Autoprefixer */
+::placeholder {
+  color: gray;
+}
 .test_vue_css_prefixer {
   display: flex;
   transform: translateX(10);
@@ -33,10 +37,15 @@ export default {
 </style>
 
 <style lang="scss">
+/* Test Vue.js SCSS Autoprefixer */
+::placeholder {
+  color: gray;
+}
 .test_vue_scss_prefixer {
   display: flex;
   transform: translateX(10);
 }
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

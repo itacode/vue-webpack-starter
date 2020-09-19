@@ -97,16 +97,7 @@ a:hover {
  * Form controls
  */
 
-::-webkit-input-placeholder {
-  color: #6f6f6f;
-}
-::-moz-placeholder {
-  color: #6f6f6f;
-}
-:-ms-input-placeholder {/* IE 10+ */
-  color: #6f6f6f;
-}
-::-ms-input-placeholder {/* Edge */
+::placeholder {
   color: #6f6f6f;
 }
 textarea, [type="text"], [type="email"], [type="tel"], [type="search"], [type="password"] {
@@ -226,10 +217,4 @@ select {
     opacity: 1;
     transition: opacity 0.4s;
   }
-}
-.test {
-  display: flex;
-  border-top: 80px;
-  transition: 2s all;
-  transform: translate3d(-100%, 0, 0) scale3d(1, 0, 0);
 }
