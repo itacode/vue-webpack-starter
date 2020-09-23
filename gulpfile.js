@@ -40,7 +40,7 @@ function serve(cb) {
 }
 
 function watch(cb) {
-  gulp.watch(paths.sassSource, style).on('change', function(path) {
+  gulp.watch(paths.sassSource, style).on('change', function (path) {
     console.log('Changed: ' + path);
   });
   cb();

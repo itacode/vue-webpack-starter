@@ -11,8 +11,8 @@ export default {
 
 <template>
   <div id="app">
-    <h1>{{msg}}</h1>
-    <img src="images/top_img02.jpg">
+    <h1>{{ msg }}</h1>
+    <img src="images/top_img02.jpg" />
     <nav>
       <h2>Navigation menu</h2>
       <ul class="main_nav_list">
@@ -58,7 +58,7 @@ export default {
   margin-bottom: 20px;
   > li {
     display: inline-block;
-    &:nth-child(n+2) {
+    &:nth-child(n + 2) {
       margin-left: 10px;
     }
   }

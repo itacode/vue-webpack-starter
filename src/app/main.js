@@ -10,7 +10,7 @@ import { actionsNames } from './store/actions';
 
 new Vue({
   el: '#app',
-  render: h => h(TheApp),
+  render: (h) => h(TheApp),
   router,
   store,
   created() {

@@ -1,4 +1,4 @@
-import {mutationsNames} from './mutations';
+import { mutationsNames } from './mutations';
 import Axios from 'axios';
 import { env } from '../.env';
 
@@ -14,7 +14,7 @@ const actions = {
       console.error(`Error fetching data: ${error}`);
     }
     commit(mutationsNames.setContents, res.data);
-  }
+  },
 };
 
 export { actionsNames, actions };

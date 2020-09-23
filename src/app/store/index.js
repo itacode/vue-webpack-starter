@@ -12,12 +12,12 @@ const debug = process.env.NODE_ENV !== 'production';
 const plugins = debug ? [createLogger({})] : [];
 const store = new Vuex.Store({
   state: {
-    contents: {}
+    contents: {},
   },
   mutations,
   actions,
   strict: debug,
-  plugins
+  plugins,
 });
 
 export default store;
