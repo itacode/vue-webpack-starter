@@ -12,25 +12,44 @@ const routes = [
     path: '/',
     component: TheHome,
     name: 'home',
+    meta: {
+      title: 'Home',
+    },
   },
   {
     path: '/foo',
     component: TheFoo,
     name: 'foo',
+    meta: {
+      title: 'Foo',
+    },
   },
   {
     path: '/bar',
     component: TheBar,
     name: 'bar',
+    meta: {
+      title: 'Bar',
+    },
   },
   {
     path: '*',
     redirect: '/',
   },
 ];
+
 const router = new VueRouter({
   routes,
   linkExactActiveClass: 'main_nav_active',
+});
+
+const DEFAULT_TITLE = 'SPA App';
+router.afterEach((to) => {
+  // Use next tick to handle router history correctly
+  // see: https://github.com/vuejs/vue-router/issues/914#issuecomment-384477609
+  Vue.nextTick(() => {
+    document.title = to.meta.title || DEFAULT_TITLE;
+  });
 });
 
 export default router;
