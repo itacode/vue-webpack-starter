@@ -5,12 +5,12 @@ import './plugins/polyfills';
 import Vue from 'vue';
 import router from './router';
 import store from './store';
-import TheApp from './TheApp.vue';
+import App from './App.vue';
 import { actionsNames } from './store/actions';
 
 new Vue({
   el: '#app',
-  render: (h) => h(TheApp),
+  render: (h) => h(App),
   router,
   store,
   created() {

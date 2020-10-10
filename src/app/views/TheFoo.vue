@@ -6,7 +6,9 @@
 </template>
 
 <script>
-export default {
+import Vue from 'vue';
+
+export default Vue.extend({
   name: 'TheFoo',
 
   computed: {
@@ -14,5 +16,5 @@ export default {
       return this.$store.state.contents;
     },
   },
-};
+});
 </script>
