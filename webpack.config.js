@@ -38,7 +38,10 @@ module.exports = (env, argv) => {
           use: [
             argv.mode !== 'production'
               ? 'vue-style-loader'
-              : MiniCssExtractPlugin.loader,
+              : {
+                  loader: MiniCssExtractPlugin.loader,
+                  options: { esModule: false },
+                },
             {
               loader: 'css-loader',
               options: {
@@ -55,7 +58,10 @@ module.exports = (env, argv) => {
           use: [
             argv.mode !== 'production'
               ? 'vue-style-loader'
-              : MiniCssExtractPlugin.loader,
+              : {
+                  loader: MiniCssExtractPlugin.loader,
+                  options: { esModule: false },
+                },
             {
               loader: 'css-loader',
               options: {
