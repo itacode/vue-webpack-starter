@@ -34,38 +34,21 @@ module.exports = (env, argv) => {
             /node_modules/.test(file) && !/\.vue\.js/.test(file),
         },
         {
-          test: /\.css$/,
+          test: /\.(scss|css)$/,
           use: [
             argv.mode !== 'production'
               ? 'vue-style-loader'
               : {
                   loader: MiniCssExtractPlugin.loader,
-                  options: { esModule: false },
+                  options: {
+                    // needed after upgrade to css-loader 4.0.0 (default is true)
+                    esModule: false,
+                  },
                 },
             {
               loader: 'css-loader',
               options: {
-                importLoaders: 1,
-                // needed after updating to css-loader 4.0.0 (default changed to true)
-                esModule: false,
-              },
-            },
-            'postcss-loader',
-          ],
-        },
-        {
-          test: /\.scss$/,
-          use: [
-            argv.mode !== 'production'
-              ? 'vue-style-loader'
-              : {
-                  loader: MiniCssExtractPlugin.loader,
-                  options: { esModule: false },
-                },
-            {
-              loader: 'css-loader',
-              options: {
-                // needed after updating to css-loader 4.0.0 (default changed to true)
+                // needed after upgrade to css-loader 4.0.0 (default is true)
                 esModule: false,
               },
             },
@@ -74,13 +57,8 @@ module.exports = (env, argv) => {
           ],
         },
         {
-          test: /\.(png|jpg|gif|svg)$/,
-          use: {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-            },
-          },
+          test: /\.(png|jpg|jpeg|gif|svg)$/i,
+          type: 'asset/resource',
         },
       ],
     },
@@ -106,6 +84,11 @@ module.exports = (env, argv) => {
   };
 
   if (argv.mode === 'development') {
+    // TODO: remove this patch when problem will be fixed
+    // Patch to fix broken hot reloading problem.
+    // https://github.com/webpack/webpack-dev-server/issues/2758
+    config.target = 'web';
+
     config.plugins.push(
       new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin({
