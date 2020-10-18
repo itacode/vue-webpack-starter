@@ -1,7 +1,7 @@
 # Vue webpack starter
-I wanted a Vue.js lightweight starter template, with newer versions of less tools than the ones used in the official vue-cli, so I created my own one from scratch.
+I wanted a Vue.js lightweight starter template, with newer versions of less tools than the ones used in the official Vue-cli, so I created my own one from scratch.
 
-This template it is a ready to use, to start developing single page applications with Vue.js single file components. It uses Webpack 4, webpack-dev-server with hot reload enabled.
+This template it is a ready to use, to start developing single page applications with Vue.js single file components. It uses Webpack, Webpack-dev-server with hot reload enabled.
 
 The basic environment configuration is imported from the module `.env`, through merging properties of the objects defined in the files inside `.env` directory, with node environment ones.
 - If `NODE_ENV` is undefined or equal to `"production"` then `.env-production.js` is used in merging and `NODE_ENV` is set to `"production"`
@@ -13,9 +13,9 @@ It is possible to add configuration by simply defining new properties on the con
 
 Gulp is configurated to compile scss files and serve the page.
 
-It's possible to code in parallel the page HTML and SCSS external to Vue files, using Gulp with Browsersync or Gulp and webpack-dev-server in watch mode. Use only one of the following options:
+It's possible to code in parallel the page HTML and SCSS external to Vue files, using Gulp with Browsersync or Gulp and Webpack-dev-server in watch mode. Use only one of the following options:
 - Execute command `gulp` . In this case Gulp watches SCSS files compiling them when they change, and also starts Browsersync, which injects compiled CSS without reloading and reloads page HTML if changed
-- Execute command `npm run serve:watch` and `gulp watch` . In this case Gulp watches SCSS files compiling them when they change, and webpack-dev-server watches for changes of files in the src directory, automatically recompiling Vue files and reloading the app and HTML page
+- Execute command `npm run serve:watch` and `gulp watch` . In this case Gulp watches SCSS files compiling them when they change, and Webpack-dev-server watches for changes of files in the src directory, automatically recompiling Vue files and reloading the app and HTML page
 
 ## Features
 - Vue.js
