@@ -53,7 +53,12 @@ module.exports = (env, argv) => {
               },
             },
             'postcss-loader',
-            'sass-loader',
+            {
+              loader: 'sass-loader',
+              options: {
+                additionalData: '@import "@/css/prepends";',
+              },
+            },
           ],
         },
         {
@@ -65,12 +70,13 @@ module.exports = (env, argv) => {
     resolve: {
       alias: {
         vue$: 'vue/dist/vue.esm.js',
+        '@': path.resolve(__dirname, 'src'),
       },
     },
     plugins: [new VueLoaderPlugin()],
     devtool: 'source-map', // enum
     devServer: {
-      contentBase: './src',
+      contentBase: path.join(__dirname, 'src'),
       // When starting server via the CLI with --watch-content-base
       watchOptions: {
         ignored: ['**/*.scss'],

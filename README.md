@@ -31,7 +31,7 @@ It's possible to code in parallel the page HTML and SCSS external to Vue files, 
 - ESLint
 - Jest
 - Autoprefixer
-- Scss-loader
+- Scss-loader with global prepends for all scss
 - CSS extraction to a file
 - Gulp to compile SCSS
 - Gulp Browsersync to inject compiled CSS and reload page HTML
