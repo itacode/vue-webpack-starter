@@ -1,4 +1,4 @@
-# Vue webpack 4 lean starter
+# Vue webpack starter
 I wanted a Vue.js lightweight starter template, with newer versions of less tools than the ones used in the official vue-cli, so I created my own one from scratch.
 
 This template it is a ready to use, to start developing single page applications with Vue.js single file components. It uses Webpack 4, webpack-dev-server with hot reload enabled.
@@ -24,7 +24,7 @@ It's possible to code in parallel the page HTML and SCSS external to Vue files, 
 - Axios
 - Promise polyfill
 - Environment variables
-- Webpack 4
+- Webpack 5
 - Webpack-dev-server with hot reload
 - Babel 7
 - Vue-loader

@@ -1,5 +1,5 @@
 {
-  "name": "vue-webpack-lean-starter",
+  "name": "vue-webpack-starter",
   "version": "1.0.0",
   "description": "Easily add vue to an existing page.",
   "main": "src/app/main.js",
