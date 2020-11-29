@@ -76,25 +76,19 @@ module.exports = (env, argv) => {
     plugins: [new VueLoaderPlugin()],
     devtool: 'source-map', // enum
     devServer: {
-      contentBase: path.join(__dirname, 'src'),
-      // When starting server via the CLI with --watch-content-base
-      watchOptions: {
-        ignored: ['**/*.scss'],
-      },
-      hot: true,
+      static: [
+        {
+          directory: path.join(__dirname, 'src'),
+          watch: argv.watch ? { ignored: ['**/*.scss'] } : false,
+        },
+      ],
       host: process.env.HOST, // Defaults to `localhost`
       port: process.env.PORT, // Defaults to 8080
-      stats: 'minimal',
       overlay: true,
     },
   };
 
   if (argv.mode === 'development') {
-    // TODO: remove this patch when problem will be fixed
-    // Patch to fix broken hot reloading problem.
-    // https://github.com/webpack/webpack-dev-server/issues/2758
-    config.target = 'web';
-
     config.plugins.push(
       new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin({
