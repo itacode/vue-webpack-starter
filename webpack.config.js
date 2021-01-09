@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = (env, argv) => {
   const config = {
@@ -17,12 +18,6 @@ module.exports = (env, argv) => {
     },
     module: {
       rules: [
-        {
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /node_modules/,
-        },
         {
           test: /\.vue$/,
           use: 'vue-loader',
@@ -73,7 +68,10 @@ module.exports = (env, argv) => {
         '@': path.resolve(__dirname, 'src'),
       },
     },
-    plugins: [new VueLoaderPlugin()],
+    plugins: [
+      new VueLoaderPlugin(),
+      new ESLintPlugin({ extensions: ['js', 'vue'] }),
+    ],
     devtool: 'source-map', // enum
     devServer: {
       static: [

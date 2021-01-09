@@ -1,0 +1,14 @@
+// https://code.visualstudio.com/docs/languages/jsconfig
+{
+  "include": [
+    "src/**/*",
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+    }
+  }
+}
