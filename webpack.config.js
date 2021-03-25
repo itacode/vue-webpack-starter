@@ -82,7 +82,9 @@ module.exports = (env, argv) => {
       ],
       host: process.env.HOST, // Defaults to `localhost`
       port: process.env.PORT, // Defaults to 8080
-      overlay: true,
+      client: {
+        overlay: true,
+      }
     },
   };
 
