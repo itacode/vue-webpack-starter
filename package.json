@@ -4,14 +4,12 @@
   "description": "Easily add vue to an existing page.",
   "main": "src/app/main.js",
   "scripts": {
-    "serve": "cross-env NODE_ENV=development webpack serve --progress --mode=development",
-    "serve:watch": "cross-env NODE_ENV=development webpack serve --progress --mode=development --watch",
-    "build": "cross-env NODE_ENV=production webpack --mode=production",
+    "serve": "webpack serve --node-env development --env platform=development --progress",
+    "serve:watch": "webpack serve --node-env development --mode=development --env platform=development --progress --watch",
+    "build": "webpack --node-env production --mode=production --env platform=production --progress",
     "lint": "eslint ./src/app",
     "test:unit": "jest --passWithNoTests",
-    "test:unit:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand",
-    "webpack": "cross-env NODE_ENV=development webpack --mode=development",
-    "webpack:watch": "cross-env NODE_ENV=development webpack --progress --watch --mode=development"
+    "test:unit:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand"
   },
   "keywords": [],
   "author": "",
@@ -30,6 +28,7 @@
     "copy-webpack-plugin": "^8.0.0",
     "cross-env": "^7.0.3",
     "css-loader": "^5.0.1",
+    "dotenv-webpack": "^7.0.2",
     "eslint": "^7.19.0",
     "eslint-config-prettier": "^8.0.0",
     "eslint-plugin-prettier": "^3.3.1",

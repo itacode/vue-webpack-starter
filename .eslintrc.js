@@ -19,7 +19,7 @@ module.exports = {
   plugins: ['prettier'],
   rules: {
     // "off" or 0; "warn" or 1; "error" or 2
-    'no-console': process.env.NODE_ENV !== 'production' ? 'warn' : 'error',
+    'no-console': process.env.NODE_ENV !== 'production' ? 'off' : 'error',
     'no-unused-vars': process.env.NODE_ENV !== 'production' ? 'warn' : 'error',
     indent: ['error', 2],
     'linebreak-style': ['error', 'unix'],

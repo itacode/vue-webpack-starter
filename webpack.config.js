@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -6,8 +7,32 @@ const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const dotenv = require('dotenv');
 
 module.exports = (env, argv) => {
+  let envParsed = {};
+  let dotenvFile;
+  const dotenvPlatformLocalFile = `.env.${env.platform}.local`;
+  const dotenvPlatformFile = `.env.${env.platform}`;
+  const dotenvDefaultFile = '.env';
+
+  if (env.platform) {
+    if (fs.existsSync(dotenvPlatformLocalFile)) {
+      dotenvFile = dotenvPlatformLocalFile;
+    } else if (fs.existsSync(dotenvPlatformFile)) {
+      dotenvFile = dotenvPlatformFile;
+    } else if (fs.existsSync(dotenvDefaultFile)) {
+      dotenvFile = dotenvDefaultFile;
+    }
+  } else if (fs.existsSync(dotenvDefaultFile)) {
+    dotenvFile = dotenvDefaultFile;
+  }
+  if (dotenvFile) {
+    envParsed = dotenv.config({
+      path: path.resolve(process.cwd(), dotenvFile),
+    }).parsed;
+  }
+
   const config = {
     entry: {
       main: './src/app/main.js',
@@ -31,7 +56,7 @@ module.exports = (env, argv) => {
         {
           test: /\.(scss|css)$/,
           use: [
-            argv.mode !== 'production'
+            process.env.NODE_ENV !== 'production'
               ? 'vue-style-loader'
               : {
                   loader: MiniCssExtractPlugin.loader,
@@ -71,6 +96,9 @@ module.exports = (env, argv) => {
     plugins: [
       new VueLoaderPlugin(),
       new ESLintPlugin({ extensions: ['js', 'vue'] }),
+      new webpack.DefinePlugin({
+        'process.env': JSON.stringify(envParsed),
+      }),
     ],
     devtool: 'source-map', // enum
     devServer: {
@@ -84,11 +112,11 @@ module.exports = (env, argv) => {
       port: process.env.PORT, // Defaults to 8080
       client: {
         overlay: true,
-      }
+      },
     },
   };
 
-  if (argv.mode === 'development') {
+  if (process.env.NODE_ENV === 'development') {
     config.plugins.push(
       new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin({
@@ -97,7 +125,7 @@ module.exports = (env, argv) => {
     );
   }
 
-  if (argv.mode === 'production') {
+  if (process.env.NODE_ENV === 'production') {
     config.plugins.push(
       new MiniCssExtractPlugin({
         filename: 'css/app.[name].bundle.css',
