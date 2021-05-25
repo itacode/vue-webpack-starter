@@ -16,7 +16,6 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 8,
   },
-  plugins: ['prettier'],
   rules: {
     // "off" or 0; "warn" or 1; "error" or 2
     'no-console': process.env.NODE_ENV !== 'production' ? 'off' : 'error',
@@ -25,6 +24,5 @@ module.exports = {
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
-    'prettier/prettier': 'error',
   },
 };
