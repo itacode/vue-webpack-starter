@@ -58,20 +58,8 @@ module.exports = (env, argv) => {
           use: [
             process.env.NODE_ENV !== 'production'
               ? 'vue-style-loader'
-              : {
-                  loader: MiniCssExtractPlugin.loader,
-                  options: {
-                    // needed after upgrade to css-loader 4.0.0 (default is true)
-                    esModule: false,
-                  },
-                },
-            {
-              loader: 'css-loader',
-              options: {
-                // needed after upgrade to css-loader 4.0.0 (default is true)
-                esModule: false,
-              },
-            },
+              : MiniCssExtractPlugin.loader,
+            'css-loader',
             'postcss-loader',
             {
               loader: 'sass-loader',
