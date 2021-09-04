@@ -106,7 +106,6 @@ module.exports = (env, argv) => {
 
   if (process.env.NODE_ENV === 'development') {
     config.plugins.push(
-      new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin({
         template: './src/index.html',
       })
