@@ -2,12 +2,10 @@
  * Smooth scroll to the anchor link.
  * Usage: $('.js_smooth_scroll').smoothScrollDP();
  */
-;(function ($, window, document, undefined) {
-
+(function ($, window, document, undefined) {
   'use strict';
 
   $.fn.smoothScrollDP = function () {
-
     return this.each(function () {
       $(this).on('click', function (e) {
         var target = $(this.hash);
@@ -16,25 +14,28 @@
         } else {
           location.hash = this.hash;
         }
-        target = target.length ? target : $('[name="' + this.hash.slice(1) + '"]');
+        target = target.length
+          ? target
+          : $('[name="' + this.hash.slice(1) + '"]');
         if (target.length) {
-          $('html, body').animate({
-            scrollTop: target.offset().top
-          }, 1000);
+          $('html, body').animate(
+            {
+              scrollTop: target.offset().top,
+            },
+            1000
+          );
           e.preventDefault();
         }
       });
     });
   };
-
 })(jQuery, window, document);
 
 /**
  * page top button
  */
-;(function ($, window, document, undefined) {
+(function ($, window, document, undefined) {
   $(function () {
-
     'use strict';
 
     var $top = $('#js_pagetop_btn'),
@@ -45,9 +46,12 @@
       $window.scroll(libdan.debounce(onScroll, 250));
       $top.on('click', function (e) {
         e.preventDefault();
-        $('html, body').animate({
-          scrollTop: '0px'
-        }, 1000);
+        $('html, body').animate(
+          {
+            scrollTop: '0px',
+          },
+          1000
+        );
       });
       $window.scroll();
     }
@@ -59,22 +63,20 @@
       } else {
         $top.removeClass('js_pagetop_btn_active');
       }
-    };
+    }
   });
 })(jQuery, window, document);
 
 /**
  * Ligthbox (blackbox)
  */
-;(function ($, window, document, undefined) {
-
+(function ($, window, document, undefined) {
   'use strict';
 
   $.fn.blackboxDP = function (options) {
     options = options || {};
 
     return this.each(function () {
-
       var $wrap = options.overlayID ? $('#' + options.overlayID) : $(this.hash),
         $layer = $wrap.find('#js_blackbox_layer'),
         $inner = $wrap.find('#js_blackbox_inner'),
@@ -95,12 +97,12 @@
           $img.attr('src', $this.attr('href'));
         }
         $('body').css({
-          'height': '100%',
-          'overflow': 'hidden'
+          height: '100%',
+          overflow: 'hidden',
         });
         $wrap.show();
         $layer.animate({
-          opacity: 1
+          opacity: 1,
         });
         setTimeout(function () {
           $inner.addClass('js_blackbox_play');
@@ -111,13 +113,13 @@
         if ($target.hasClass('js_close')) {
           e.preventDefault();
           $('body').css({
-            'height': '',
-            'overflow': ''
+            height: '',
+            overflow: '',
           });
           $inner.removeClass('js_blackbox_play');
           $wrap.hide();
           $layer.css({
-            opacity: 0
+            opacity: 0,
           });
         }
       });

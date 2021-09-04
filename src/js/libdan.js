@@ -3,21 +3,19 @@
  */
 
 var libdan = (function libdan() {
-
-  "use strict";
+  'use strict';
 
   var self = {};
 
   //	Get the right cross-browser event
   var getTransitionEvent = function getTransitionEvent() {
-
     var t,
       el = document.createElement('fakeelement'),
       transitions = {
-        'transition': 'transitionend',
-        'OTransition': 'oTransitionEnd',
-        'MozTransition': 'transitionend',
-        'WebkitTransition': 'webkitTransitionEnd'
+        transition: 'transitionend',
+        OTransition: 'oTransitionEnd',
+        MozTransition: 'transitionend',
+        WebkitTransition: 'webkitTransitionEnd',
       };
 
     for (t in transitions) {
@@ -30,14 +28,13 @@ var libdan = (function libdan() {
 
   //	Get the right cross-browser event
   var getAnimationEvent = function getAnimationEvent() {
-
     var t,
       el = document.createElement('fakeelement'),
       animations = {
-        'animation': 'animationend',
-        'OAnimation': 'oAnimationEnd',
-        'MozAnimation': 'animationend',
-        'WebkitAnimation': 'webkitAnimationEnd'
+        animation: 'animationend',
+        OAnimation: 'oAnimationEnd',
+        MozAnimation: 'animationend',
+        WebkitAnimation: 'webkitAnimationEnd',
       };
 
     for (t in animations) {
@@ -51,7 +48,6 @@ var libdan = (function libdan() {
   // Throttle.
   // Example: $(window).scroll(throttle( callback, 250 ));
   var throttle = function throttle(func, limit) {
-
     var wait = false;
 
     return function () {
@@ -74,7 +70,6 @@ var libdan = (function libdan() {
   // Cancel the trailing throttled invocation.
   // github.com/wuct/raf-throttle
   var rafThrottle = function rafThrottle(callback) {
-
     var requestId;
 
     function later(args) {
@@ -117,15 +112,12 @@ var libdan = (function libdan() {
         args = arguments;
 
       function delayed() {
-        if (!execAsap)
-          func.apply(obj, args);
+        if (!execAsap) func.apply(obj, args);
         timeout = null;
       }
 
-      if (timeout)
-        clearTimeout(timeout);
-      else if (execAsap)
-        func.apply(obj, args);
+      if (timeout) clearTimeout(timeout);
+      else if (execAsap) func.apply(obj, args);
 
       timeout = setTimeout(delayed, threshold || 100);
     };
@@ -149,10 +141,7 @@ var libdan = (function libdan() {
 
   // Shuffle an array
   var shuffleArray = function shuffleArray(a) {
-
-    var i,
-      temp,
-      ran;
+    var i, temp, ran;
 
     for (i = a.length - 1; i > 0; i--) {
       temp = a[i];
@@ -176,20 +165,19 @@ var libdan = (function libdan() {
   // Example: if (isMedia("screen and (max-width:800px)"){}
   // Copyright 2011 Nicholas C. Zakas. All rights reserved.
   var isMedia = (function () {
-
     var div;
 
     return function (query) {
-
       //if the <div> doesn't exist, create it and make sure it's hidden
       if (!div) {
-        div = document.createElement("div");
-        div.id = "ncz1";
-        div.style.cssText = "position:absolute;top:-1000px";
+        div = document.createElement('div');
+        div.id = 'ncz1';
+        div.style.cssText = 'position:absolute;top:-1000px';
         document.body.insertBefore(div, document.body.firstChild);
       }
 
-      div.innerHTML = "_<style media=\"" + query + "\"> #ncz1 { width: 1px; }</style>";
+      div.innerHTML =
+        '_<style media="' + query + '"> #ncz1 { width: 1px; }</style>';
       div.removeChild(div.firstChild);
       return div.offsetWidth == 1;
     };
@@ -207,5 +195,4 @@ var libdan = (function libdan() {
   self.extend = extend;
 
   return self;
-
 })();
