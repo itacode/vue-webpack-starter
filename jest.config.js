@@ -9,6 +9,12 @@ module.exports = {
     // process js with `babel-jest`
     '^.+\\.js$': 'babel-jest',
   },
+  // Fix "SyntaxError: Cannot use import statement outside a module"
+  // support the same @ -> src alias mapping in source code
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
+
   // From jest 27 it defaults to node.
   // Jsdom is for a browser environment.
   testEnvironment: 'jsdom',
