@@ -1,8 +1,8 @@
 // For a detailed explanation regarding each configuration property, visit:
 // https://jestjs.io/docs/configuration
+// https://vue-test-utils.vuejs.org/installation/
 
 module.exports = {
-  moduleFileExtensions: ['js', 'ts'],
   transform: {
     // process `*.vue` files with `vue-jest`
     '^.+\\.vue$': 'vue-jest',
@@ -17,14 +17,9 @@ module.exports = {
     '^@/(.*)$': '<rootDir>/src/$1',
   },
 
-  // Jsdom is for a browser environment.
+  // Jsdom is for a browser environment. Default: "node"
   testEnvironment: 'jsdom',
 
   testURL: 'http://localhost/',
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
-  globals: {
-    'ts-jest': {
-      babelConfig: true
-    }
-  },
 };
