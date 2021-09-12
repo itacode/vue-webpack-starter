@@ -1,16 +1,3 @@
-<script>
-import Vue from 'vue';
-
-export default Vue.extend({
-  name: 'App',
-  data() {
-    return {
-      msg: 'Welcome to Your Vue.js App',
-    };
-  },
-});
-</script>
-
 <template>
   <div id="app">
     <h1>{{ msg }}</h1>
@@ -26,6 +13,19 @@ export default Vue.extend({
     <router-view></router-view>
   </div>
 </template>
+
+<script lang="ts">
+import Vue from 'vue';
+
+export default Vue.extend({
+  name: 'App',
+  data() {
+    return {
+      msg: 'Welcome to Your Vue.js App',
+    };
+  },
+});
+</script>
 
 <style>
 /* Test Vue.js CSS Autoprefixer */

@@ -3,7 +3,10 @@ const mutationsNames = {
 };
 
 const mutations = {
-  [mutationsNames.setContents](state, contents) {
+  [mutationsNames.setContents](
+    state: Record<string, unknown>,
+    contents: unknown
+  ): void {
     state.contents = contents;
   },
 };

@@ -1,21 +1,25 @@
 module.exports = {
   root: true,
+  // https://eslint.vuejs.org/user-guide/#usage
+  parser: 'vue-eslint-parser',
+  parserOptions: {
+    parser: '@typescript-eslint/parser',
+    ecmaVersion: 2021,
+    sourceType: 'module',
+  },
+
   env: {
-    es6: true,
     browser: true,
     node: true,
-    mocha: true,
     jquery: true,
     jest: true,
   },
   extends: [
     'eslint:recommended',
-    'plugin:vue/essential',
-    'plugin:prettier/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:vue/recommended',
+    'prettier',
   ],
-  parserOptions: {
-    ecmaVersion: 8,
-  },
   rules: {
     // "off" or 0; "warn" or 1; "error" or 2
     'no-console': process.env.NODE_ENV !== 'production' ? 'off' : 'error',

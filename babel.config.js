@@ -6,29 +6,14 @@ module.exports = function (api) {
       [
         '@babel/preset-env',
         {
-          modules: false,
+          modules: 'auto',
           // Adds specific imports for polyfills when they are used in each file.
           useBuiltIns: 'usage',
-          corejs: 3,
+          corejs: 3.17,
         },
       ],
     ],
     plugins: ['@babel/plugin-transform-runtime'],
-    // For Jest
-    env: {
-      test: {
-        presets: [
-          [
-            '@babel/preset-env',
-            {
-              targets: {
-                node: 'current',
-              },
-            },
-          ],
-        ],
-      },
-    },
   };
 
   return config;

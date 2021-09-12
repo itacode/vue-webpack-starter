@@ -35,7 +35,7 @@ module.exports = (env, argv) => {
 
   const config = {
     entry: {
-      main: './src/app/main.js',
+      main: './src/app/main.ts',
     },
     output: {
       filename: 'js/app.[name].bundle.js',
@@ -46,6 +46,14 @@ module.exports = (env, argv) => {
         {
           test: /\.vue$/,
           use: 'vue-loader',
+        },
+        {
+          test: /\.tsx?$/,
+          loader: 'ts-loader',
+          options: {
+            appendTsSuffixTo: [/\.vue$/],
+          },
+          exclude: /node_modules/,
         },
         {
           test: /\.js$/,
@@ -80,15 +88,16 @@ module.exports = (env, argv) => {
         vue$: 'vue/dist/vue.esm.js',
         '@': path.resolve(__dirname, 'src'),
       },
+      extensions: ['.tsx', '.ts', '.js', '.vue'],
     },
     plugins: [
       new VueLoaderPlugin(),
-      new ESLintPlugin({ extensions: ['js', 'vue'] }),
+      new ESLintPlugin({ extensions: ['js', 'vue', 'ts', 'tsx'] }),
       new webpack.DefinePlugin({
         'process.env': JSON.stringify(envParsed),
       }),
     ],
-    devtool: 'source-map', // enum
+    devtool: 'source-map',
     devServer: {
       static: [
         {

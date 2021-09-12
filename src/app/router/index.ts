@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router';
+import VueRouter, { RouteConfig } from 'vue-router';
 import TheHome from '../views/TheHome.vue';
 import TheFoo from '../views/TheFoo.vue';
 import TheBar from '../views/TheBar.vue';
@@ -7,7 +7,7 @@ import TheBar from '../views/TheBar.vue';
 // You don't need to do this when using global script tags.
 Vue.use(VueRouter);
 
-const routes = [
+const routes: Array<RouteConfig> = [
   {
     path: '/',
     component: TheHome,
@@ -48,7 +48,7 @@ router.afterEach((to) => {
   // Use next tick to handle router history correctly
   // see: https://github.com/vuejs/vue-router/issues/914#issuecomment-384477609
   Vue.nextTick(() => {
-    document.title = to.meta.title || DEFAULT_TITLE;
+    document.title = to?.meta?.title || DEFAULT_TITLE;
   });
 });
 

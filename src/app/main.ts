@@ -10,9 +10,6 @@ import { actionsNames } from './store/actions';
 
 new Vue({
   el: '#app',
-  render: (h) => h(App),
-  router,
-  store,
   created() {
     this.init();
   },
@@ -21,4 +18,7 @@ new Vue({
       this.$store.dispatch(actionsNames.fetchContents);
     },
   },
+  render: (h) => h(App),
+  router,
+  store,
 });

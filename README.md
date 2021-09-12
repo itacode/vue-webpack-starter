@@ -1,5 +1,5 @@
 # Vue webpack starter
-I wanted a Vue.js lightweight starter template, with newer versions of less tools than the ones used in the official Vue-cli, so I created my own one from scratch.
+I wanted a TypeScript Vue.js lightweight starter template, with newer versions of less tools than the ones used in the official Vue-cli, so I created my own one from scratch.
 
 This template it is a ready to use, to start developing single page applications with Vue.js single file components. It uses Webpack, Webpack-dev-server with hot reload enabled.
 
@@ -29,6 +29,7 @@ An env file for a specific platform (e.g. .env.production) will take higher prio
 
 ## Features
 - Vue.js
+- TypeScript
 - Vuex
 - Vue-router
 - Axios
@@ -37,8 +38,8 @@ An env file for a specific platform (e.g. .env.production) will take higher prio
 - Webpack 5
 - Webpack-dev-server with hot reload
 - Babel 7
-- Vue-loader
 - ESLint
+- Prettier
 - Jest
 - Autoprefixer
 - Scss-loader with global prepends for all scss
