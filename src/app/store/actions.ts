@@ -12,7 +12,7 @@ const actions = {
   }): Promise<void> {
     let res;
     try {
-      res = await Axios.get(process.env.API_PATH || '');
+      res = await Axios.get(process.env.VUE_APP_API_PATH || '');
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error(`Error fetching data: ${error}`);

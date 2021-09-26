@@ -19,13 +19,16 @@ For example if you want `.env.production` to be loaded, you need to specify `--e
 ### Environment Variables
 You can specify env variables by placing the following files in your project root:
 ```shell
-.env                # loaded in all cases
-.env.local          # loaded in all cases, ignored by git
-.env.[platform]         # only loaded in specified platform
-.env.[platform].local   # only loaded in specified platform, ignored by git
+.env.[platform].local # only loaded in specified platform, ignored by git
+.env.[platform]       # only loaded in specified platform
+.env.local            # loaded in all cases, ignored by git
+.env                  # loaded in all cases
 ```
+
+Only `NODE_ENV`, `BASE_URL`, and variables that start with `VUE_APP_` will be statically embedded into the client bundle with `webpack.DefinePlugin`.
 #### Env Loading Priorities
-An env file for a specific platform (e.g. .env.production) will take higher priority than a generic one (e.g. .env).
+An env file for a specific platform (e.g. .env.production) will take higher priority than a generic one (e.g. .env).  
+This [convention](https://github.com/bkeepers/dotenv#what-other-env-files-can-i-use) has been adopted.
 
 ## Features
 - Vue.js

@@ -9,3 +9,4 @@ build/*
 __tests__
 *.d.ts
 /*.js
+/env
