@@ -1,6 +1,3 @@
-// polyfills
-import './plugins/polyfills';
-
 // App
 import Vue from 'vue';
 import router from './router';

@@ -1,7 +1,6 @@
 import Vuex from 'Vuex';
 import { mount, createLocalVue } from '@vue/test-utils';
 import TheFoo from '@/app/views/TheFoo.vue';
-import '@/app/plugins/polyfills';
 
 const localVue = createLocalVue();
 localVue.use(Vuex);
