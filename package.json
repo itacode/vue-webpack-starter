@@ -51,6 +51,7 @@
     "ts-jest": "^27.0.5",
     "ts-loader": "^9.2.5",
     "typescript": "^4.4.3",
+    "vue-eslint-parser": "^7.11.0",
     "vue-jest": "^3.0.7",
     "vue-loader": "^15.9.8",
     "vue-template-compiler": "^2.6.14",
