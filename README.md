@@ -9,27 +9,6 @@ It's possible to code in parallel the page HTML and SCSS external to Vue files, 
 - Execute command `gulp` . In this case Gulp watches SCSS files compiling them when they change, and also starts Browsersync, which injects compiled CSS without reloading and reloads page HTML if changed
 - Execute command `npm run serve:watch` and `gulp watch` . In this case Gulp watches SCSS files compiling them when they change, and Webpack-dev-server watches for changes of files in the src directory, automatically recompiling Vue files and reloading the app and HTML page
 
-## Platforms and Environment Variables
-### Platforms
-**Platform** is a way to specify an environment file to be loaded by `dotenv`.  
-For example if you want `.env.production` to be loaded, you need to specify `--env platform=production` parameter in the webpack command of npm the script:
-```shell
-"build": "webpack --node-env production --mode=production --env platform=production --progress"
-```
-### Environment Variables
-You can specify env variables by placing the following files in your project root:
-```shell
-.env.[platform].local # only loaded in specified platform, ignored by git
-.env.[platform]       # only loaded in specified platform
-.env.local            # loaded in all cases, ignored by git
-.env                  # loaded in all cases
-```
-
-Only `NODE_ENV`, `BASE_URL`, and variables that start with `VUE_APP_` will be statically embedded into the client bundle with `webpack.DefinePlugin`.
-#### Env Loading Priorities
-An env file for a specific platform (e.g. .env.production) will take higher priority than a generic one (e.g. .env).  
-This [convention](https://github.com/bkeepers/dotenv#what-other-env-files-can-i-use) has been adopted.
-
 ## Features
 - Vue.js
 - TypeScript
@@ -50,3 +29,24 @@ This [convention](https://github.com/bkeepers/dotenv#what-other-env-files-can-i-
 - Gulp to compile SCSS
 - Gulp Browsersync to inject compiled CSS and reload page HTML
 - Css original reset, that merges Meyer's reset with normalize.css
+
+## Platforms and Environment Variables
+### Platforms
+**Platform** is a way to specify an environment file to be loaded by `dotenv`.  
+For example if you want `.env.production` to be loaded, you need to specify `--env platform=production` parameter in the webpack command of npm the script:
+```shell
+"build": "webpack --node-env production --mode=production --env platform=production --progress"
+```
+### Environment Variables
+You can specify env variables by placing the following files in your project root:
+```shell
+.env.[platform].local # only loaded in specified platform, ignored by git
+.env.[platform]       # only loaded in specified platform
+.env.local            # loaded in all cases, ignored by git
+.env                  # loaded in all cases
+```
+
+Only `NODE_ENV`, `BASE_URL`, and variables that start with `VUE_APP_` will be statically embedded into the client bundle with `webpack.DefinePlugin`.
+#### Env Loading Priorities
+An env file for a specific platform (e.g. .env.production) will take higher priority than a generic one (e.g. .env).  
+This [convention](https://github.com/bkeepers/dotenv#what-other-env-files-can-i-use) has been adopted.
