@@ -3,12 +3,6 @@ I wanted a TypeScript Vue.js lightweight starter template, with newer versions o
 
 This template it is a ready to use, to start developing single page applications with Vue.js single file components. It uses Webpack, Webpack-dev-server with hot reload enabled.
 
-Gulp is configurated to compile scss files and serve the page.
-
-It's possible to code in parallel the page HTML and SCSS external to Vue files, using Gulp with Browsersync or Gulp and Webpack-dev-server in watch mode. Use only one of the following options:
-- Execute command `gulp` . In this case Gulp watches SCSS files compiling them when they change, and also starts Browsersync, which injects compiled CSS without reloading and reloads page HTML if changed
-- Execute command `npm run serve:watch` and `gulp watch` . In this case Gulp watches SCSS files compiling them when they change, and Webpack-dev-server watches for changes of files in the src directory, automatically recompiling Vue files and reloading the app and HTML page
-
 ## Features
 - Vue.js
 - TypeScript
@@ -26,8 +20,6 @@ It's possible to code in parallel the page HTML and SCSS external to Vue files, 
 - Autoprefixer
 - Scss-loader with global prepends for all scss
 - CSS extraction to a file
-- Gulp to compile SCSS
-- Gulp Browsersync to inject compiled CSS and reload page HTML
 - Css original reset, that merges Meyer's reset with normalize.css
 
 ## Platforms and Environment Variables

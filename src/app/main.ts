@@ -1,3 +1,7 @@
+// Style imports
+import '../css/reset.scss';
+import '../css/common.scss';
+
 // App
 import Vue from 'vue';
 import router from './router';
