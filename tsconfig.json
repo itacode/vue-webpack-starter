@@ -9,6 +9,7 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "newLine": "lf",
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {

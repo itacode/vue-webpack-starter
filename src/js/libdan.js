@@ -7,44 +7,6 @@ var libdan = (function libdan() {
 
   var self = {};
 
-  //	Get the right cross-browser event
-  var getTransitionEvent = function getTransitionEvent() {
-    var t,
-      el = document.createElement('fakeelement'),
-      transitions = {
-        transition: 'transitionend',
-        OTransition: 'oTransitionEnd',
-        MozTransition: 'transitionend',
-        WebkitTransition: 'webkitTransitionEnd',
-      };
-
-    for (t in transitions) {
-      if (el.style[t] !== undefined) {
-        return transitions[t];
-      }
-    }
-  };
-  self.getTransitionEvent = getTransitionEvent;
-
-  //	Get the right cross-browser event
-  var getAnimationEvent = function getAnimationEvent() {
-    var t,
-      el = document.createElement('fakeelement'),
-      animations = {
-        animation: 'animationend',
-        OAnimation: 'oAnimationEnd',
-        MozAnimation: 'animationend',
-        WebkitAnimation: 'webkitAnimationEnd',
-      };
-
-    for (t in animations) {
-      if (el.style[t] !== undefined) {
-        return animations[t];
-      }
-    }
-  };
-  self.getAnimationEvent = getAnimationEvent;
-
   // Throttle.
   // Example: $(window).scroll(throttle( callback, 250 ));
   var throttle = function throttle(func, limit) {
@@ -183,16 +145,6 @@ var libdan = (function libdan() {
     };
   })();
   self.isMedia = isMedia;
-
-  // Extend a JavaScript object with the key/value pairs of another.
-  // Returns first object reference.
-  var extend = function extend(obj, src) {
-    for (var key in src) {
-      if (src.hasOwnProperty(key)) obj[key] = src[key];
-    }
-    return obj;
-  };
-  self.extend = extend;
 
   return self;
 })();

@@ -7,7 +7,7 @@
     "serve": "webpack serve --node-env development --mode=development --env platform=development --progress",
     "serve:watch": "webpack serve --node-env development --mode=development --env platform=development --progress --watch",
     "build": "webpack --node-env production --mode=production --env platform=production --progress",
-    "lint": "eslint ./src/app/**",
+    "lint": "eslint ./src/app/ --ext .js,.jsx,.ts,.tsx",
     "test:unit": "jest --passWithNoTests",
     "test:unit:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand"
   },
