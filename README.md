@@ -1,7 +1,7 @@
 # Vue webpack starter
 I wanted a TypeScript Vue.js lightweight starter template, with newer versions of less tools than the ones used in the official Vue-cli, so I created my own one from scratch.
 
-This template it is a ready to use, to start developing single page applications with Vue.js single file components. It uses Webpack, Webpack-dev-server with hot reload enabled.
+This template is to start developing single page applications with Vue.js single file components. It uses Webpack, Webpack-dev-server with hot reload enabled.
 
 ## Features
 - Vue.js
