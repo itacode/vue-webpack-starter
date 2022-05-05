@@ -1,8 +1,8 @@
 <template>
   <div class="app">
     <h1>{{ msg }}</h1>
-    <img class="inline" src="images/top_img02.jpg" />
-    <nav>
+    <img class="mx-auto" src="images/top_img02.jpg" />
+    <nav class="mt-4">
       <h2>Navigation menu</h2>
       <ul class="main_nav_list">
         <li><router-link to="/">Home</router-link></li>

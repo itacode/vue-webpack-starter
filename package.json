@@ -2,7 +2,7 @@
   "name": "vue-webpack-starter",
   "version": "1.0.0",
   "description": "Easily add vue to an existing page.",
-  "main": "src/app/main.js",
+  "main": "src/app/main.ts",
   "scripts": {
     "serve": "webpack serve --node-env development --mode=development --env platform=development --progress",
     "build": "webpack --node-env production --mode=production --env platform=production --progress",
