@@ -9,7 +9,11 @@ This template is to start developing single page applications with Vue.js single
 - Vuex
 - Vue-router
 - Axios
-- Promise polyfill
+- Tailwind CSS
+- PostCSS
+- Autoprefixer
+- Scss-loader with global prepends for all scss
+- CSS extraction into a file
 - Environment variables
 - Webpack 5
 - Webpack-dev-server with hot reload
@@ -17,18 +21,16 @@ This template is to start developing single page applications with Vue.js single
 - ESLint
 - Prettier
 - Jest
-- Autoprefixer
-- Scss-loader with global prepends for all scss
-- CSS extraction to a file
-- Tailwind CSS
 
 ## Platforms and Environment Variables
+
 ### Platforms
 **Platform** is a way to specify an environment file to be loaded by `dotenv`.  
 For example if you want `.env.production` to be loaded, you need to specify `--env platform=production` parameter in the webpack command of npm the script:
 ```shell
 "build": "webpack --node-env production --mode=production --env platform=production --progress"
 ```
+
 ### Environment Variables
 You can specify env variables by placing the following files in your project root:
 ```shell
@@ -39,6 +41,7 @@ You can specify env variables by placing the following files in your project roo
 ```
 
 Only `NODE_ENV`, `BASE_URL`, and variables that start with `VUE_APP_` will be statically embedded into the client bundle with `webpack.DefinePlugin`.
+
 #### Env Loading Priorities
 An env file for a specific platform (e.g. .env.production) will take higher priority than a generic one (e.g. .env).  
 This [convention](https://github.com/bkeepers/dotenv#what-other-env-files-can-i-use) has been adopted.
