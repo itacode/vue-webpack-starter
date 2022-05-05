@@ -4,7 +4,7 @@ const { VueLoaderPlugin } = require('vue-loader');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 const getAppEnv = require('./env').getAppEnv;
 
@@ -52,10 +52,6 @@ module.exports = (env, argv) => {
               },
             },
           ],
-        },
-        {
-          test: /\.(png|jpg|jpeg|gif|svg)$/i,
-          type: 'asset',
         },
       ],
     },
