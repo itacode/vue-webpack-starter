@@ -20,7 +20,7 @@ This template is to start developing single page applications with Vue.js single
 - Autoprefixer
 - Scss-loader with global prepends for all scss
 - CSS extraction to a file
-- Css original reset, that merges Meyer's reset with normalize.css
+- Tailwind CSS
 
 ## Platforms and Environment Variables
 ### Platforms

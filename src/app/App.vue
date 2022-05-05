@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div class="app">
     <h1>{{ msg }}</h1>
-    <img src="images/top_img02.jpg" />
+    <img class="inline" src="images/top_img02.jpg" />
     <nav>
       <h2>Navigation menu</h2>
       <ul class="main_nav_list">
@@ -48,12 +48,8 @@ export default Vue.extend({
   transform: translateX(10);
 }
 
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.app {
   text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
 }
 .main_nav_list {

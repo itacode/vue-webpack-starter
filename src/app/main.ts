@@ -1,6 +1,5 @@
 // Style imports
-import '../css/reset.scss';
-import '../css/common.scss';
+import '../css/main.scss';
 
 // App
 import Vue from 'vue';

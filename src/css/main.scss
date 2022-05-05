@@ -1,16 +1,13 @@
 @charset "UTF-8";
-@import "./mixins";
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 
 $fontSansserif: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, "メイリオ", "MS PGothic", "ＭＳ Ｐゴシック", Osaka, arial, helvetica, sans-serif;
 $fontSerif: "Hiragino Mincho ProN", "ヒラギノ明朝 ProN W3", "ＭＳ Ｐ明朝", "MS PMincho", "Times New Roman", Times, serif, sans-serif;
 
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-img, video {
-  max-width: 100%;
-  height: auto;
-}
 html {
   color: #222;
   font-size: 14px;
