@@ -17,9 +17,10 @@ module.exports = {
     '^@/(.*)$': '<rootDir>/src/$1',
   },
 
-  // Jsdom is for a browser environment. Default: "node"
-  testEnvironment: 'jsdom',
+  testEnvironment: 'jest-environment-jsdom',
+  testEnvironmentOptions: {
+    url: 'http://localhost/',
+  },
 
-  testURL: 'http://localhost/',
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
 };
