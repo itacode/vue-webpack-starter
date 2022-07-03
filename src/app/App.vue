@@ -15,14 +15,23 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import { defineComponent } from 'vue';
+import { actionsNames } from '@/app/store/actions';
 
-export default Vue.extend({
+export default defineComponent({
   name: 'App',
   data() {
     return {
       msg: 'Welcome to Your Vue.js App',
     };
+  },
+  created() {
+    this.init();
+  },
+  methods: {
+    init() {
+      this.$store.dispatch(actionsNames.fetchContents);
+    },
   },
 });
 </script>

@@ -21,7 +21,7 @@ module.exports = (env, argv) => {
       rules: [
         {
           test: /\.vue$/,
-          use: 'vue-loader',
+          loader: 'vue-loader',
         },
         {
           test: /\.tsx?$/,
@@ -33,7 +33,7 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.js$/,
-          use: 'babel-loader',
+          loader: 'babel-loader',
           exclude: (file) =>
             /node_modules/.test(file) && !/\.vue\.js/.test(file),
         },
@@ -57,7 +57,6 @@ module.exports = (env, argv) => {
     },
     resolve: {
       alias: {
-        vue$: 'vue/dist/vue.esm.js',
         '@': path.resolve(__dirname, 'src'),
       },
       extensions: ['.tsx', '.ts', '.js', '.vue'],

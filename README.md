@@ -4,7 +4,7 @@ I wanted a TypeScript Vue.js lightweight starter template, with newer versions o
 This template is to start developing single page applications with Vue.js single file components. It uses Webpack, Webpack-dev-server with hot reload enabled.
 
 ## Features
-- Vue.js
+- Vue.js 3 (the version 2 is in the vue2 branch)
 - TypeScript
 - Vuex
 - Vue-router
