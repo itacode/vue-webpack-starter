@@ -5,14 +5,11 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script setup lang="ts">
+import { computed } from 'vue';
+import store from '@/app/store/index';
 
-export default defineComponent({
-  computed: {
-    fetchedData() {
-      return this.$store.state.contents;
-    },
-  },
+const fetchedData = computed(() => {
+  return store.state.contents;
 });
 </script>
