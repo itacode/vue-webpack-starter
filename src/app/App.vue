@@ -14,26 +14,13 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script setup lang="ts">
+import { ref } from 'vue';
+import store from '@/app/store/index';
 import { actionsNames } from '@/app/store/actions';
 
-export default defineComponent({
-  name: 'App',
-  data() {
-    return {
-      msg: 'Welcome to Your Vue.js App',
-    };
-  },
-  created() {
-    this.init();
-  },
-  methods: {
-    init() {
-      this.$store.dispatch(actionsNames.fetchContents);
-    },
-  },
-});
+const msg = ref('Welcome to Your Vue.js App');
+store.dispatch(actionsNames.fetchContents);
 </script>
 
 <style>

@@ -2,15 +2,8 @@
   <h1>{{ msg }}</h1>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script setup lang="ts">
+import { ref } from 'vue';
 
-export default defineComponent({
-  name: 'TheHome',
-  data() {
-    return {
-      msg: 'Home route',
-    };
-  },
-});
+const msg = ref('Home route');
 </script>
