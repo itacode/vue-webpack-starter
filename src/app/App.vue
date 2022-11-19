@@ -16,8 +16,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import store from '@/app/store/index';
-import { actionsNames } from '@/app/store/actions';
+import store from '@/app/stores/index';
+import { actionsNames } from '@/app/stores/actions';
 
 const msg = ref('Welcome to Your Vue.js App');
 store.dispatch(actionsNames.fetchContents);

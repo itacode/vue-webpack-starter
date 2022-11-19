@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import store from '@/app/store/index';
+import store from '@/app/stores/index';
 
 const fetchedData = computed(() => {
   return store.state.contents;
