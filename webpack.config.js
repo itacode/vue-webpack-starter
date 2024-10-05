@@ -63,7 +63,10 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new VueLoaderPlugin(),
-      new ESLintPlugin({ extensions: ['js', 'vue', 'ts', 'tsx'] }),
+      new ESLintPlugin({
+        extensions: ['js', 'vue', 'ts', 'tsx'],
+        configType: 'flat',
+      }),
     ],
     devtool: 'source-map',
     devServer: {
@@ -76,7 +79,7 @@ module.exports = (env, argv) => {
       host: process.env.HOST, // Defaults to `localhost`
       port: process.env.PORT, // Defaults to 8080
       client: {
-        overlay: true,
+        overlay: false,
       },
     },
   };
@@ -85,7 +88,7 @@ module.exports = (env, argv) => {
     config.plugins.push(
       new HtmlWebpackPlugin({
         template: './src/index.html',
-      })
+      }),
     );
   }
 
@@ -107,7 +110,7 @@ module.exports = (env, argv) => {
       }),
       new HtmlWebpackPlugin({
         template: './src/index.html',
-      })
+      }),
     );
   }
 
@@ -118,7 +121,7 @@ module.exports = (env, argv) => {
   config.plugins.push(
     new webpack.DefinePlugin({
       'process.env': JSON.stringify(appEnv),
-    })
+    }),
   );
 
   return config;
