@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
-@tailwind "tailwindcss/base";
-@tailwind "tailwindcss/components";
-@tailwind "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --font-sans-serif: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, "メイリオ", "MS PGothic", "ＭＳ Ｐゴシック", Osaka, arial, helvetica, sans-serif;
@@ -99,8 +99,7 @@ a:hover {
   color: #6f6f6f;
 }
 textarea, [type="text"], [type="email"], [type="tel"], [type="search"], [type="password"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  appearance: none;
   background-color: #fff;
   border: 1px solid #a0a0a0;
   padding: 0.2em 0.5em;
