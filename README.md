@@ -12,7 +12,6 @@ This template is to start developing single page applications with Vue.js single
 - Tailwind CSS
 - PostCSS
 - Autoprefixer
-- Scss-loader with global prepends for all scss
 - CSS extraction into a file
 - Environment variables
 - Webpack 5

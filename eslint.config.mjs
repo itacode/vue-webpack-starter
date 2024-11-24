@@ -2,6 +2,7 @@ import js from '@eslint/js';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import typescriptEslint from 'typescript-eslint';
 import pluginVue from 'eslint-plugin-vue';
+import globals from 'globals';
 
 export default [
   js.configs.recommended,
@@ -14,6 +15,13 @@ export default [
   },
   {
     files: ['**/*.js', '**/*.ts', '**/*.tsx'],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+        ...globals.browser,
+        ...globals.jest,
+      },
+    },
     rules: {
       // "off" or 0; "warn" or 1; "error" or 2
       'no-console': process.env.NODE_ENV !== 'production' ? 'off' : 'error',

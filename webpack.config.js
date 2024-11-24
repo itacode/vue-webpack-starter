@@ -45,12 +45,6 @@ module.exports = (env, argv) => {
               : MiniCssExtractPlugin.loader,
             { loader: 'css-loader', options: { url: false } },
             'postcss-loader',
-            {
-              loader: 'sass-loader',
-              options: {
-                additionalData: '@import "@/css/prepends";',
-              },
-            },
           ],
         },
       ],

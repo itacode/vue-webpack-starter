@@ -1,18 +1,19 @@
 @charset "UTF-8";
 
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@tailwind "tailwindcss/base";
+@tailwind "tailwindcss/components";
+@tailwind "tailwindcss/utilities";
 
-
-$fontSansserif: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, "メイリオ", "MS PGothic", "ＭＳ Ｐゴシック", Osaka, arial, helvetica, sans-serif;
-$fontSerif: "Hiragino Mincho ProN", "ヒラギノ明朝 ProN W3", "ＭＳ Ｐ明朝", "MS PMincho", "Times New Roman", Times, serif, sans-serif;
+:root {
+  --font-sans-serif: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, "メイリオ", "MS PGothic", "ＭＳ Ｐゴシック", Osaka, arial, helvetica, sans-serif;
+  --font-serif: "Hiragino Mincho ProN", "ヒラギノ明朝 ProN W3", "ＭＳ Ｐ明朝", "MS PMincho", "Times New Roman", Times, serif, sans-serif;
+}
 
 html {
   color: #222;
   font-size: 14px;
   line-height: 1.6;
-  font-family: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, "メイリオ", "MS PGothic", "ＭＳ Ｐゴシック", Osaka, arial, helvetica, sans-serif;
+  font-family: var(--font-sans-serif);
 }
 body {
   background-color: #fff;
@@ -24,7 +25,7 @@ a:hover {
   text-decoration: none;
 }
 .font_serif {
-  font-family: $fontSerif;
+  font-family: var(--font-serif);
 }
 .pc_br {
   display: none;
@@ -112,13 +113,7 @@ textarea, [type="text"], [type="email"], [type="tel"], [type="search"], [type="p
 [type="file"] {
   cursor: pointer;
 }
-//select::-ms-expand {
-//	display: none;
-//}
 select {
-//  -moz-appearance: none;
-//  -webkit-appearance: none;
-//  appearance: none;
   height: 2em;
   border: 1px solid #a0a0a0;
   border-radius: 0;
@@ -167,7 +162,6 @@ select {
   display: inline-block;
   vertical-align: middle;
   max-width: 100%;
-  //	max-height: 100%;
   text-align: left;
   -webkit-overflow-scrolling: touch;
   -webkit-overflow-scrolling: -blackberry-touch;

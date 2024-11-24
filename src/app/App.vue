@@ -32,18 +32,6 @@ store.dispatch(actionsNames.fetchContents);
   display: flex;
   transform: translateX(10);
 }
-</style>
-
-<style lang="scss">
-/* Test Vue.js SCSS Autoprefixer */
-::placeholder {
-  color: gray;
-}
-.test_vue_scss_prefixer {
-  display: flex;
-  transform: translateX(10);
-}
-
 .app {
   text-align: center;
   margin-top: 60px;
