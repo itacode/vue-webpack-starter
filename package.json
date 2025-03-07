@@ -4,8 +4,8 @@
   "description": "Easily add vue to an existing page.",
   "main": "src/app/main.ts",
   "scripts": {
-    "serve": "webpack serve --define-process-env-node-env development --mode=development --env platform=development --progress",
-    "build": "webpack --define-process-env-node-env production --mode=production --env platform=production --progress",
+    "serve": "webpack serve --config-node-env development --mode=development --env platform=development --progress",
+    "build": "webpack --config-node-env production --mode=production --env platform=production --progress",
     "lint": "eslint ./src/app/",
     "test:unit": "jest --passWithNoTests",
     "test:unit:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand"
@@ -58,7 +58,7 @@
     "vue-loader": "^17.4.2",
     "vue-style-loader": "^4.1.3",
     "webpack": "^5.96.1",
-    "webpack-cli": "^5.1.4",
+    "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.1.0"
   }
 }
