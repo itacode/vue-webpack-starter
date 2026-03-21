@@ -15,7 +15,6 @@ describe('TheFoo.fetchedData', () => {
         plugins: [store],
       },
     });
-    debugger;
     expect((wrapper.vm as any).fetchedData).toBe('Fetched data');
   });
 });

@@ -14,7 +14,6 @@ const actions = {
     try {
       res = await Axios.get(process.env.VUE_APP_API_PATH || '');
     } catch (error) {
-      // eslint-disable-next-line no-console
       console.error(`Error fetching data: ${error}`);
     }
     commit(mutationsNames.setContents, res?.data);
