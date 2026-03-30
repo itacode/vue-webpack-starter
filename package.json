@@ -4,7 +4,7 @@
   "description": "Easily add vue to an existing page.",
   "main": "src/app/main.ts",
   "scripts": {
-    "serve": "webpack serve --config-node-env development --mode=development --env platform=development --progress",
+    "dev": "webpack serve --config-node-env development --mode=development --env platform=development --progress",
     "build": "webpack --config-node-env production --mode=production --env platform=production --progress",
     "lint": "eslint ./src/app/",
     "test:unit": "jest --passWithNoTests",

@@ -25,7 +25,7 @@ This template is to start developing single page applications with Vue.js single
 
 ### Platforms
 **Platform** is a way to specify an environment file to be loaded by `dotenv`.  
-For example if you want `.env.production` to be loaded, you need to specify `--env platform=production` parameter in the webpack command of npm the script:
+For example if you want `.env.production` to be loaded, you need to specify `--env platform=production` parameter:
 ```shell
 "build": "webpack --node-env production --mode=production --env platform=production --progress"
 ```
