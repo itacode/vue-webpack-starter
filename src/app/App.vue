@@ -15,12 +15,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import store from '@/app/stores/index';
-import { actionsNames } from '@/app/stores/actions';
+import { ref, onMounted } from 'vue';
+import { useContentStore } from '@/app/stores/index';
 
 const msg = ref('Welcome to Your Vue.js App');
-store.dispatch(actionsNames.fetchContents);
+const contentStore = useContentStore();
+onMounted(() => contentStore.fetchContents());
 </script>
 
 <style>

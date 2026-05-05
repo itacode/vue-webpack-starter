@@ -5,8 +5,12 @@
 @tailwind utilities;
 
 :root {
-  --font-sans-serif: "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, "メイリオ", "MS PGothic", "ＭＳ Ｐゴシック", Osaka, arial, helvetica, sans-serif;
-  --font-serif: "Hiragino Mincho ProN", "ヒラギノ明朝 ProN W3", "ＭＳ Ｐ明朝", "MS PMincho", "Times New Roman", Times, serif, sans-serif;
+  --font-sans-serif:
+    'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, 'メイリオ',
+    'MS PGothic', 'ＭＳ Ｐゴシック', Osaka, arial, helvetica, sans-serif;
+  --font-serif:
+    'Hiragino Mincho ProN', 'ヒラギノ明朝 ProN W3', 'ＭＳ Ｐ明朝', 'MS PMincho',
+    'Times New Roman', Times, serif, sans-serif;
 }
 
 html {
@@ -43,30 +47,29 @@ a:hover {
  * Helpers
  */
 
-
 /* Image replacement */
 
 .ir {
-	overflow: hidden;
-	text-align: left;
-	text-indent: -999em;
+  overflow: hidden;
+  text-align: left;
+  text-indent: -999em;
 }
 .ir br {
-	display: none;
+  display: none;
 }
 .hidden {
   display: none !important;
 }
 .visuallyhidden {
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: 1px;
-	white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
 }
 .invisible {
   visibility: hidden;
@@ -74,21 +77,22 @@ a:hover {
 
 /* Clearfix */
 
-.clearfix:before, .clearfix:after {
-	content: " ";
-	display: table;
+.clearfix:before,
+.clearfix:after {
+  content: ' ';
+  display: table;
 }
 .clearfix:after {
-	clear: both;
+  clear: both;
 }
 
 /* Rollover */
 
 .btn_roll01:hover img {
-	opacity: 0.7;
+  opacity: 0.7;
 }
 .btn_roll02:hover {
-	opacity: 0.7;
+  opacity: 0.7;
 }
 
 /**
@@ -98,7 +102,12 @@ a:hover {
 ::placeholder {
   color: #6f6f6f;
 }
-textarea, [type="text"], [type="email"], [type="tel"], [type="search"], [type="password"] {
+textarea,
+[type='text'],
+[type='email'],
+[type='tel'],
+[type='search'],
+[type='password'] {
   appearance: none;
   background-color: #fff;
   border: 1px solid #a0a0a0;
@@ -109,7 +118,7 @@ textarea, [type="text"], [type="email"], [type="tel"], [type="search"], [type="p
     border-color: #43aeda;
   }
 }
-[type="file"] {
+[type='file'] {
   cursor: pointer;
 }
 select {
@@ -180,7 +189,8 @@ select {
   top: -20px;
   width: 40px;
   height: 40px;
-  background: rgba(0, 0, 0, 0.7) url(../images/blackbox_ico01.svg) no-repeat 50% 50%;
+  background: rgba(0, 0, 0, 0.7) url(../images/blackbox_ico01.svg) no-repeat 50%
+    50%;
   background-size: 30px 30px;
   border-radius: 4px;
   text-indent: -9999px;
@@ -196,7 +206,8 @@ select {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.8) url(../images/pagetop_ico01.svg) no-repeat 50% 50%;
+  background: rgba(0, 0, 0, 0.8) url(../images/pagetop_ico01.svg) no-repeat 50%
+    50%;
   background-size: 20px auto;
   visibility: hidden;
   opacity: 0;

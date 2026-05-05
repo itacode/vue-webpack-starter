@@ -1,4 +1,8 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
+import {
+  createRouter,
+  createWebHashHistory,
+  type RouteRecordRaw,
+} from 'vue-router';
 import TheBar from '../views/TheBar.vue';
 import TheFoo from '../views/TheFoo.vue';
 import TheHome from '../views/TheHome.vue';
@@ -38,7 +42,7 @@ const router = createRouter({
 
 const DEFAULT_TITLE = 'SPA App';
 router.afterEach((to) => {
-  document.title = to?.meta?.title as string || DEFAULT_TITLE;
+  document.title = (to?.meta?.title as string) || DEFAULT_TITLE;
 });
 
 export default router;

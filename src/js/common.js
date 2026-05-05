@@ -22,7 +22,7 @@
             {
               scrollTop: target.offset().top,
             },
-            1000
+            1000,
           );
           e.preventDefault();
         }
@@ -50,7 +50,7 @@
           {
             scrollTop: '0px',
           },
-          1000
+          1000,
         );
       });
       $window.scroll();

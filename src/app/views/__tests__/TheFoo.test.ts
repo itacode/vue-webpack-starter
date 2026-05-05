@@ -1,20 +1,24 @@
-import { createStore } from 'vuex';
+import { createPinia, setActivePinia } from 'pinia';
 import { mount } from '@vue/test-utils';
 import TheFoo from '@/app/views/TheFoo.vue';
-
-const store = createStore({
-  state() {
-    return { contents: 'Fetched data' };
-  },
-});
+import { useContentStore } from '@/app/stores';
 
 describe('TheFoo.fetchedData', () => {
   test('sanity test', () => {
+    const pinia = createPinia();
+    setActivePinia(pinia);
+
+    // Get an instance of your content store
+    const contentStore = useContentStore();
+
+    // Mock the state directly for the test
+    contentStore.contents = 'Mocked data';
+
     const wrapper = mount(TheFoo, {
       global: {
-        plugins: [store],
+        plugins: [pinia],
       },
     });
-    expect((wrapper.vm as any).fetchedData).toBe('Fetched data');
+    expect(wrapper.vm.fetchedData).toBe('Mocked data');
   });
 });

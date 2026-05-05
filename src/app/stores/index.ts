@@ -1,16 +1,22 @@
-import { createStore } from 'vuex';
+import { defineStore } from 'pinia';
+import Axios from 'axios';
 
-import { mutations } from './mutations';
-import { actions } from './actions';
+export type State = {
+  contents: unknown;
+};
 
-const debug = process.env.NODE_ENV !== 'production';
-const store = createStore({
-  state: {
-    contents: {},
+export const useContentStore = defineStore('content', {
+  state: (): State => ({
+    contents: null,
+  }),
+  actions: {
+    async fetchContents() {
+      try {
+        const res = await Axios.get(process.env.VUE_APP_API_PATH || '');
+        this.contents = res?.data;
+      } catch (error) {
+        console.error(`Error fetching data: ${error}`);
+      }
+    },
   },
-  mutations,
-  actions,
-  strict: debug,
 });
-
-export default store;

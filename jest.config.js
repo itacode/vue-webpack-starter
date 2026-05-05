@@ -23,10 +23,7 @@ module.exports = {
     // to fix `ReferenceError: Vue is not defined` due to a bug (?) in @vue/test-utils@2.0.0
     // https://github.com/vuejs/vue-jest/issues/479
     // https://issuehint.com/issue/vuejs/test-utils/1525
-    customExportConditions: [
-      'node',
-      'node-addons'
-    ]
+    customExportConditions: ['node', 'node-addons'],
   },
 
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
