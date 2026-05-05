@@ -11,6 +11,4 @@ import { useContentStore } from '@/app/stores/index';
 
 const contentStore = useContentStore();
 const fetchedData = computed(() => contentStore.contents);
-
-defineExpose({ fetchedData });
 </script>
