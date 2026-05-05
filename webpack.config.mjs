@@ -1,14 +1,16 @@
-const path = require('path');
-const webpack = require('webpack');
-const { VueLoaderPlugin } = require('vue-loader');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ESLintPlugin = require('eslint-webpack-plugin');
-const getAppEnv = require('./env').getAppEnv;
+import path from 'path';
+import { fileURLToPath } from 'url';
+import webpack from 'webpack';
+import { VueLoaderPlugin } from 'vue-loader';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import ESLintPlugin from 'eslint-webpack-plugin';
+import { getAppEnv } from './env/index.js';
 
-module.exports = (env, argv) => {
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+export default (env, argv) => {
   const config = {
     entry: {
       main: './src/app/main.ts',
@@ -16,6 +18,7 @@ module.exports = (env, argv) => {
     output: {
       filename: 'js/app.[name].bundle.js',
       path: path.resolve(__dirname, 'dist'),
+      clean: true,
     },
     module: {
       rules: [
@@ -41,7 +44,7 @@ module.exports = (env, argv) => {
           test: /\.(scss|css)$/,
           use: [
             process.env.NODE_ENV !== 'production'
-              ? 'vue-style-loader'
+              ? 'style-loader'
               : MiniCssExtractPlugin.loader,
             { loader: 'css-loader', options: { url: false } },
             'postcss-loader',
@@ -91,7 +94,6 @@ module.exports = (env, argv) => {
       new MiniCssExtractPlugin({
         filename: 'css/app.[name].bundle.css',
       }),
-      new CleanWebpackPlugin(),
       new CopyPlugin({
         patterns: [
           {

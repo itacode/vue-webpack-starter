@@ -1,4 +1,4 @@
-module.exports = function (api) {
+export default function (api) {
   api.cache(true);
 
   const config = {
@@ -17,4 +17,4 @@ module.exports = function (api) {
   };
 
   return config;
-};
+}

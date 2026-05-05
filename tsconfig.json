@@ -13,7 +13,6 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "libReplacement": false,
     "newLine": "lf",
     "sourceMap": true,
     "types": ["node", "jest"],
