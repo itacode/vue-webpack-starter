@@ -9,7 +9,14 @@ module.exports = {
     // process js with `babel-jest`
     '^.+\\.jsx?$': 'babel-jest',
     // process `*.ts` files with `ts-jest`
-    '^.+\\.tsx?$': 'ts-jest',
+    '^.+\\.tsx?$': [
+      'ts-jest',
+      {
+        tsconfig: {
+          module: 'commonjs',
+        },
+      },
+    ],
   },
   // Fix "SyntaxError: Cannot use import statement outside a module"
   // support the same @ -> src alias mapping in source code
