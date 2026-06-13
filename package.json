@@ -55,7 +55,7 @@
     "tailwindcss": "^4.3.0",
     "ts-jest": "^29.4.11",
     "ts-loader": "^9.6.0",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.3",
     "typescript-eslint": "^8.61.0",
     "vue-loader": "^17.4.2",
     "webpack": "^5.107.2",
