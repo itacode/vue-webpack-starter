@@ -1,7 +1,8 @@
-import { createPinia, setActivePinia } from 'pinia';
 import { mount } from '@vue/test-utils';
-import TheFoo from '@/app/views/TheFoo.vue';
+import { createPinia, setActivePinia } from 'pinia';
+
 import { useContentStore } from '@/app/stores';
+import TheFoo from '@/app/views/TheFoo.vue';
 
 describe('TheFoo.fetchedData', () => {
   test('sanity test', () => {

@@ -3,6 +3,7 @@ import {
   createWebHashHistory,
   type RouteRecordRaw,
 } from 'vue-router';
+
 import TheBar from '../views/TheBar.vue';
 import TheFoo from '../views/TheFoo.vue';
 import TheHome from '../views/TheHome.vue';

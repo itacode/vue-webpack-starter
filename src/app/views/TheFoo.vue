@@ -7,6 +7,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
+
 import { useContentStore } from '@/app/stores/index';
 
 const contentStore = useContentStore();
