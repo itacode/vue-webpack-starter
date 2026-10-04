@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted,ref } from 'vue';
+import { onMounted, ref } from 'vue';
 
 import { useContentStore } from '@/app/stores/index';
 
