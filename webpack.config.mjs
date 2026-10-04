@@ -1,11 +1,12 @@
+import CopyPlugin from 'copy-webpack-plugin';
+import ESLintPlugin from 'eslint-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import webpack from 'webpack';
 import { VueLoaderPlugin } from 'vue-loader';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import CopyPlugin from 'copy-webpack-plugin';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import ESLintPlugin from 'eslint-webpack-plugin';
+import webpack from 'webpack';
+
 import { getAppEnv } from './env/index.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
